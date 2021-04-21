@@ -24,7 +24,19 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  * POST route template
  */
 router.post('/', (req, res) => {
-  // POST route code here
+    console.log(req.body)
+    .then( result => {
+        const trailId = result.rows[0].id
+        console.log(req.body.user.id);
+        const userId = req.body.user.id
+
+        const query = `INSERT INTO "favorites" ("trail_id", "user_id") VALUES ($1, $2) `
+        pool.query(query [trailId, userId])
+    })
+    .catch(err => {
+        console.log('ERROR: Cannot get Trails', err);
+        res.sendStatus(500)
+    })
 });
 
 module.exports = router;

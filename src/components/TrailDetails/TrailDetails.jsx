@@ -26,8 +26,12 @@ function TrailDetails(props) {
     
     console.log(props)
     
-    const backHome = () =>{
-        history.push('/'); 
+    const favorite = () =>{
+        axios.post('/api/trails').then(res =>{
+        
+        }).catch((err) =>{
+            console.log(err)
+        })
     }
     
 
@@ -37,9 +41,11 @@ function TrailDetails(props) {
         <div>
             {details.map(detail => (
                 <> 
-                    <h4>
+                    <h3>
                         {detail.trail_name} 
-                        {detail.city_name}
+                    </h3>
+                    <h4>
+                        {detail.trail_city}
                     </h4>
                 </>
             ))}
@@ -48,7 +54,7 @@ function TrailDetails(props) {
                 
         </div>
         <div class="details">
-                <button id="home-btn" class="btn btn-info" onClick={backHome}>Home</button>
+                <button id="home-btn" class="btn btn-info" onClick={favorite}>Favorite</button>
         </div> 
 
         </>
