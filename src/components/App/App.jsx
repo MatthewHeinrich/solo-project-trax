@@ -105,7 +105,7 @@ function App() {
           </ProtectedRoute>
 
           {/* <Route path="/details/:id" render={(props) => <TrailDetails id={props.match.params.id} />}> */}
-            <Route path='/details/:id' render={(props) => <TrailDetails id={props.match.params.id} /> }>
+            <Route path='/details/:id' render={(props) => <TrailDetails trail={props.match.params} id={props.match.params.id} /> }>
             {/* <TrailDetails /> */}
             </Route>
           {/* </Route> */}

@@ -1,12 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import {useSelector} from 'react-redux'
+import {useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom';
 import axios from 'axios'
 
 function TrailDetails(props) {
 
     let [details, setDetails] = useState([])
+    const trail = useSelector(store => store.trail);
     const history = useHistory();
+    const dispatch = useDispatch();
 
     useEffect(() => { 
         axios.get(`/api/details/${props.id}`).then((response) =>{
@@ -27,11 +29,14 @@ function TrailDetails(props) {
     console.log(props)
     
     const favorite = () =>{
-        axios.post('/api/trails').then(res =>{
-        
-        }).catch((err) =>{
-            console.log(err)
-        })
+        // console.log('trying to favorite')
+        // axios.post('/api/trails', trail).then((res) =>{
+        // res.send(props)
+        // }).catch((err) =>{
+        //     console.log(err)
+        // })
+        console.log(trail);
+        dispatch({type: 'ADD_FAVORITE', payload: details})
     }
     
 
