@@ -14,13 +14,16 @@ function UserPage() {
       <p>Your ID is: {user.id}</p>
     {trails.map(trail => {
       return (
-        <Link to="">
+    
         <div className="container">
           <p>{trail.trail_name}</p>
           <p>{trail.trail_city}</p>
           <img src={trail.map_url}></img>
+          <Link to={`/details/${trail.id}`}>
+            <button>Details</button>
+          </Link>
         </div>
-        </Link>
+        
       );
     })}
     </div>

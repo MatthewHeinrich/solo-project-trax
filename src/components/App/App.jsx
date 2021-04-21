@@ -19,6 +19,7 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import TrailDetails from '../TrailDetails/TrailDetails';
 
 import './App.css';
 
@@ -102,6 +103,12 @@ function App() {
           >
             <LandingPage />
           </ProtectedRoute>
+
+          {/* <Route path="/details/:id" render={(props) => <TrailDetails id={props.match.params.id} />}> */}
+            <Route path='/details/:id' render={(props) => <TrailDetails id={props.match.params.id} /> }>
+            {/* <TrailDetails /> */}
+            </Route>
+          {/* </Route> */}
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
