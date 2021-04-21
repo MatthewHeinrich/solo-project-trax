@@ -25,14 +25,17 @@ router.get('/', rejectUnauthenticated, (req, res) => {
  */
 router.post('/', (req, res) => {
     console.log(req.body)
-    .then(result => {
-        const trailId = result.rows[0].id
-        console.log(req.body.user.id);
-        const userId = req.body.user.id
+    const userId = req.body[0].id
+    const trailId = req.body[1][0].id
+    console.log(userId)
+    console.log(trailId)
+    // console.log(req.body.user.id);
+    // const userId = req.body.user.id
 
-        const query = `INSERT INTO "favorites" ("trail_id", "user_id") VALUES ($1, $2)`
-        pool.query(query, [trailId, userId])
-        res.sendStatus(201);
+    const query = `INSERT INTO "favorites" ("trail_id", "user_id") VALUES ($1, $2)`
+    pool.query(query, [trailId, userId])
+    .then(res => {
+        console.log(res);
     })
     .catch(err => {
         console.log('ERROR: Cannot get Trails', err);

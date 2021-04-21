@@ -6,7 +6,7 @@ import axios from 'axios'
 function TrailDetails(props) {
 
     let [details, setDetails] = useState([])
-    const trail = useSelector(store => store.trail);
+    const user = useSelector(store => store.user);
     const history = useHistory();
     const dispatch = useDispatch();
 
@@ -35,8 +35,8 @@ function TrailDetails(props) {
         // }).catch((err) =>{
         //     console.log(err)
         // })
-        console.log(trail);
-        dispatch({type: 'ADD_FAVORITE', payload: details})
+        console.log(details);
+        dispatch({type: 'ADD_FAVORITE', payload: [user, details] })
     }
     
 

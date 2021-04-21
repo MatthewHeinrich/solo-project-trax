@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import TrailDetails from '../TrailDetails/TrailDetails';
 
+
 import './App.css';
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
-            path="/info"
+            path="/favorites"
           >
             <Favorites />
           </ProtectedRoute>
@@ -109,6 +110,10 @@ function App() {
             {/* <TrailDetails /> */}
             </Route>
           {/* </Route> */}
+
+          {/* <Route path="/favorites">
+            <Favorites />
+          </Route> */}
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

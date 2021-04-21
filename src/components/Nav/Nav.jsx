@@ -46,7 +46,7 @@ function Nav() {
 
         {user.id && (
           <>
-            <Link className="navLink" to="/info" onClick={() => closeMenu()}>
+            <Link className="navLink" to="/favorites" onClick={() => closeMenu()}>
               Favorites
             </Link>
             {/* <LogOutButton className="navLink" /> */}
