@@ -1,11 +1,21 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import { MdClose } from "react-icons/md"
+import { FiMenu } from "react-icons/fi"
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import {useSelector} from 'react-redux';
 
 function Nav() {
   const user = useSelector((store) => store.user);
+  const [navbarOpen, setNavbarOpen] = useState(false);
+
+  const handleToggle = () =>{
+    setNavbarOpen(prev => !prev)
+  }
+  const closeMenu = () => {
+    setNavbarOpen(false)
+  }
 
   let loginLinkData = {
     path: '/login',
@@ -18,28 +28,39 @@ function Nav() {
   }
 
   return (
+
     <div className="nav">
       <Link to="/home">
         <h2 className="nav-title">Trax</h2>
       </Link>
-      <div>
-        <Link className="navLink" to={loginLinkData.path}>
+      <nav className="navBar">
+        <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
+        <button onClick={handleToggle}>{navbarOpen ? (
+                  <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
+                ) : (
+                  <FiMenu style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
+                )}</button>
+        <Link className="navLink" to={loginLinkData.path} onClick={() => closeMenu()}>
           {loginLinkData.text}
         </Link>
 
         {user.id && (
           <>
-            <Link className="navLink" to="/info">
-              Info Page
+            <Link className="navLink" to="/info" onClick={() => closeMenu()}>
+              Favorites
             </Link>
-            <LogOutButton className="navLink" />
+            {/* <LogOutButton className="navLink" /> */}
           </>
         )}
 
-        <Link className="navLink" to="/about">
+        <Link className="navLink" to="/about" onClick={() => closeMenu()}>
           About
         </Link>
-      </div>
+
+          <LogOutButton className="navLink" onClick={() => closeMenu()}/>
+  
+        </ul>
+      </nav>
     </div>
   );
 }

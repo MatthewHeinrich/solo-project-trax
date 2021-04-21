@@ -40,3 +40,8 @@
 .navLink:hover {
   background-color: #008183;
 }
+
+.navBar {
+  position: relative;
+}
+
