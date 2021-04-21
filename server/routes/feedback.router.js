@@ -8,20 +8,16 @@ const {
 /**
  * GET route template
  */
-router.get('/:id', rejectUnauthenticated, (req, res) => {
+router.get('/', (req, res) => {
+    console.log(res.rows)
     // Send back user object from the session (previously queried from the database)
     const query = `SELECT * FROM "feedback" 
                     JOIN "trails" ON "trails".id = "feedback".trail_id
                     JOIN "conditions" ON "trails".id = "conditions".trail_id
-                    WHERE "trails".id = ($1)`
-    pool.query(query, [req.params.id])
+                    WHERE "trails".id = '3'`
+    pool.query(query)
     .then( result => {
-    //     const query = `SELECT * FROM "feedback" 
-    //                 JOIN "trails" ON "trails".id = "feedback".trail_id
-    //                 JOIN "conditions" ON "trails".id = "conditions".trail_id
-    //                 WHERE "trails".id = ($1)`
-    // pool.query(query, [req.params.id])
-    res.send(result.rows)
+        res.send(result.rows);
     })
     .catch(err => {
         console.log('ERROR: Cannot get Trails', err);

@@ -45,4 +45,16 @@ CREATE TABLE "favorites" (
     "trail_id" INT REFERENCES "trails"(id)
 );
 
+-- create new trail --
 INSERT INTO "trails" ("trail_name", "trail_city", "map_url") VALUES ('Lebanon Hills', 'Eagan', 'Screen Shot 2021-04-20 at 2.06.33 PM')
+
+-- Get favorites from user -- 
+SELECT "trails".trail_name, "trails".trail_city, "trails".map_url FROM "favorites"
+JOIN "user" ON "user".id = "favorites".user_id
+JOIN "trails" ON "trails".id = "favorites".trail_id 
+
+-- Admin adding feedback to trails --
+INSERT INTO "feedback" ("flowy", "technical", "downhill", "climbing", "overall", "user_id", "trail_id") VALUES ('6', '6', '4', '7', '7', '1', '3');
+
+-- Admin adding conditions to trails --
+INSERT INTO "conditions" ("open", "closed", "wet", "tacky", "perfect", "dry", "user_id", "trail_id") VALUES (true, false, false, true, false, false, '1', '3')

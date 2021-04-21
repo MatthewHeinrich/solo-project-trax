@@ -57,8 +57,9 @@ function Nav() {
           About
         </Link>
 
-          <LogOutButton className="navLink" onClick={() => closeMenu()}/>
-  
+          <Link className="navLink" onClick={() => closeMenu()}>
+          <LogOutButton />
+          </Link>
         </ul>
       </nav>
     </div>

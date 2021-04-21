@@ -3,11 +3,13 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useHistory} from 'react-router-dom';
 import axios from 'axios'
 
+import Conditions from '../Conditions/Conditions';
+import Feedback from '../Feedback/Feedback';
+
 function TrailDetails(props) {
 
     let [details, setDetails] = useState([])
     const user = useSelector(store => store.user);
-    const history = useHistory();
     const dispatch = useDispatch();
 
     useEffect(() => { 
@@ -35,10 +37,10 @@ function TrailDetails(props) {
         // }).catch((err) =>{
         //     console.log(err)
         // })
-        console.log(details);
+
         dispatch({type: 'ADD_FAVORITE', payload: [user, details] })
     }
-    
+    console.log(details);
 
     // renders genres, movie poster and description 
     return( 
@@ -52,11 +54,15 @@ function TrailDetails(props) {
                     <h4>
                         {detail.trail_city}
                     </h4>
+                    <h4>
+                        {detail.technical}
+                    </h4>
                 </>
             ))}
                 
                 <img height={300} width={300} src={details[0]?.map_url}></img>
-                
+                {/* <Conditions /> */}
+                <Feedback />
         </div>
         <div class="details">
                 <button id="home-btn" class="btn btn-info" onClick={favorite}>Favorite</button>

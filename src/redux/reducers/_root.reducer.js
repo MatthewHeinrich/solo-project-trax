@@ -4,6 +4,7 @@ import user from './user.reducer';
 import trails from './trail.reducer';
 import favorites from './favorites.reducer';
 import getFavorites from './getFavorites.reducer';
+import feedback from './feedback.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   trails,
   favorites, 
   getFavorites,
+  feedback,
 });
 
 export default rootReducer;

@@ -20,6 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import TrailDetails from '../TrailDetails/TrailDetails';
+import Feedback from '../Feedback/Feedback';
 
 
 import './App.css';
@@ -111,9 +112,9 @@ function App() {
             </Route>
           {/* </Route> */}
 
-          {/* <Route path="/favorites">
-            <Favorites />
-          </Route> */}
+          <Route path="/feedback/:id" render={(props) => <Feedback id={props.match.params.id} />} >
+            
+          </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>
