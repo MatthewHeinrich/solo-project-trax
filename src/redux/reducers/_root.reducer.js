@@ -3,6 +3,7 @@ import errors from './errors.reducer';
 import user from './user.reducer';
 import trails from './trail.reducer';
 import favorites from './favorites.reducer';
+import getFavorites from './getFavorites.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   user, // will have an id and username if someone is logged in
   trails,
   favorites, 
+  getFavorites,
 });
 
 export default rootReducer;
