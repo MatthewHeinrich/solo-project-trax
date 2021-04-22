@@ -5,11 +5,13 @@ import axios from 'axios'
 
 import Conditions from '../Conditions/Conditions';
 import Feedback from '../Feedback/Feedback';
+import DisplayData from '../DisplayData/DisplayData';
 
 function TrailDetails(props) {
 
     let [details, setDetails] = useState([])
     const user = useSelector(store => store.user);
+    const data = useSelector(store => store)
     
     const dispatch = useDispatch();
 
@@ -23,6 +25,8 @@ function TrailDetails(props) {
         })
         
     }, []);
+
+    
 
     // const description = useSelector( (store) =>{
     //     console.log('use selector:', store.movies)
@@ -44,7 +48,8 @@ function TrailDetails(props) {
 
         dispatch({type: 'ADD_FAVORITE', payload: [user, details] })
     }
-    console.log(details);
+    console.log('details', details[0]?.trail_id);
+    console.log(data);
 
     // renders genres, movie poster and description 
     return( 
@@ -80,7 +85,7 @@ function TrailDetails(props) {
                 <button id="home-btn" class="btn btn-info" onClick={favorite}>Favorite</button>
                 
         </div> 
-                
+                <DisplayData data={details}/>
         </div>
 
 

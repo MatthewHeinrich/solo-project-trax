@@ -1,14 +1,20 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
-import {useSelector} from 'react-redux';
+import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom'
 
 
 function UserPage() {
+
+  useEffect(() => {
+    dispatch({ type: 'FETCH_TRAILS' });
+  }, []);
+
+  const dispatch = useDispatch();
   // this component doesn't do much to start, just renders some user reducer info to the DOM
   const user = useSelector((store) => store.user);
   const trails = useSelector((store) => store.trails)
-  
+
   return (
     <div >
       <h2>Welcome, {user.username}!</h2>
