@@ -24,5 +24,27 @@ const {
     })
 });
 
+router.post('/', (req, res) => {
+    console.log(req.body)
+    const userId = req.body.user
+    const trailId = Number.parseInt(req.body.trail)
+    console.log(userId)
+    console.log(trailId)
+    // console.log(req.body.user.id);
+    // const userId = req.body.user.id
+
+    const query = `INSERT INTO "conditions" ("open", "closed", "wet", "tacky", "perfect", "dry", "user_id", "trail_id")
+                    VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`
+    pool.query(query, [req.body.checkedOpen, req.body.checkedClosed, req.body.checkedWet, 
+                        req.body.checkedTacky, req.body.checkedPerfect, req.body.checkedDry, userId, trailId])
+    .then(result => {
+        res.send(result.rows)
+    })
+    .catch(err => {
+        console.log('ERROR: Cannot get Trails', err);
+        res.sendStatus(500)
+    })
+});
+
 
 module.exports = router;

@@ -11,9 +11,10 @@ import axios from 'axios'
 function Favorites() {
   const dispatch = useDispatch();
   const favorites = useSelector(store => store.getFavorites)
+  const user = useSelector(store => store.user.id)
 
   useEffect(() => {
-    dispatch({type: 'FETCH_FAVORITES'})
+    dispatch({type: 'FETCH_FAVORITES', payload: user})
   }, [])
   return (
     <div className="container">

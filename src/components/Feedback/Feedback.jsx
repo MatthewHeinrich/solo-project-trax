@@ -89,8 +89,8 @@ function FeedbackPage(props) {
                     ))}
                 </Slider>
             </div> */}
-            <Slider />
-            <Conditions />
+            <Slider id={props}/>
+            <Conditions id={props}/>
         </div>
     );
 }

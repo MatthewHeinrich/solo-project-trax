@@ -52,7 +52,7 @@ function TrailDetails(props) {
         <div>
             {details.map(detail => (
                 <> 
-                    <h3>
+                    {/* <h3>
                         {detail.trail_name} 
                     </h3>
                     <h4>
@@ -60,10 +60,18 @@ function TrailDetails(props) {
                     </h4>
                     <h4>
                         {detail.overall}
-                    </h4>
+                    </h4> */}
                 </>
             ))}
-                
+                    <h3>
+                        {details[0]?.trail_name} 
+                    </h3>
+                    <h4>
+                        {details[0]?.trail_city}
+                    </h4>
+                    <h4>
+                        {details[0]?.overall}
+                    </h4>
                 <img height={300} width={300} src={details[0]?.map_url}></img>
                 <div class="details">
                 <Link to={`/feedback/${details[0]?.trail_id}`}>
