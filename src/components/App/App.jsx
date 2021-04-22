@@ -112,8 +112,8 @@ function App() {
             </Route>
           {/* </Route> */}
 
-          <Route path="/feedback/:id" render={(props) => <Feedback id={props.match.params.id} />} >
-            
+          <Route path='/feedback/:id' render={(props) => <Feedback trail={props.match.params} id={props.match.params.id} /> }>
+            {/* <Feedback path="/feedback" /> */}
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}

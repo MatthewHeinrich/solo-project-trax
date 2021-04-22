@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios'
 
 import Conditions from '../Conditions/Conditions';
@@ -10,6 +10,7 @@ function TrailDetails(props) {
 
     let [details, setDetails] = useState([])
     const user = useSelector(store => store.user);
+    
     const dispatch = useDispatch();
 
     useEffect(() => { 
@@ -29,6 +30,9 @@ function TrailDetails(props) {
     // })
     
     console.log(props)
+    console.log(user)
+
+  
     
     const favorite = () =>{
         // console.log('trying to favorite')
@@ -55,18 +59,22 @@ function TrailDetails(props) {
                         {detail.trail_city}
                     </h4>
                     <h4>
-                        {detail.technical}
+                        {detail.overall}
                     </h4>
                 </>
             ))}
                 
                 <img height={300} width={300} src={details[0]?.map_url}></img>
-                {/* <Conditions /> */}
-                <Feedback />
-        </div>
-        <div class="details">
+                <div class="details">
+                <Link to={`/feedback/${details[0]?.trail_id}`}>
+                    <button id="home-btn" class="btn btn-info">Rate It</button>
+                </Link>
                 <button id="home-btn" class="btn btn-info" onClick={favorite}>Favorite</button>
+                
         </div> 
+                
+        </div>
+
 
         </>
     )
