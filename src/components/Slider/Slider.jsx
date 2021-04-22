@@ -1,75 +1,55 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
-import Input from '@material-ui/core/Input';
-import VolumeUp from '@material-ui/icons/VolumeUp';
+import Subheader from 'material-ui/Subheader';
+import Slider from 'material-ui-slider-label/Slider';
+import { cyan500 } from 'material-ui/styles/colors';
 
-
-const useStyles = makeStyles({
-  root: {
-    width: 250,
+const styles = {
+  subheader: {
+    textTransform: 'capitalize',
   },
-  input: {
-    width: 42,
+  labelStyleOuter: {
+    width: '30px',
+    height: '30px',
+    borderRadius: '50% 50% 50% 0',
+    background: cyan500,
+    position: 'absolute',
+    transform: 'rotate(-45deg)',
+    top: '-40px',
+    left: '-9px',
   },
-});
+  labelStyleInner: {
+    transform: 'rotate(45deg)',
+    color: 'white',
+    textAlign: 'center',
+    position: 'relative',
+    top: '3px',
+    right: '0px',
+    fontSize: '10px',
+  },
+};
 
-export default function InputSlider() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(30);
+const SearchRadiusInput = ({ radius, onChange }) => (
+  <div>
+    <Subheader style={styles.subheader}>
+      {'Search radius'}
+    </Subheader>
+    <Slider
+      defaultValue={5 / 100}
+      min={0}
+      max={1}
+      step={5 / 100}
+      value={radius / 100}
+      onChange={onChange}
+      label={
+        <div style={styles.labelStyleOuter}>
+          <div style={styles.labelStyleInner}>
+            {radius}
+          </div>
+        </div>
+      }
+    />
+    
+  </div>
+);
 
-  const handleSliderChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
-  const handleInputChange = (event) => {
-    setValue(event.target.value === '' ? '' : Number(event.target.value));
-  };
-
-  const handleBlur = () => {
-    if (value < 0) {
-      setValue(0);
-    } else if (value > 100) {
-      setValue(100);
-    }
-  };
-
-  return (
-    <div className={classes.root}>
-      <Typography id="input-slider" gutterBottom>
-        Volume
-      </Typography>
-      <Grid container spacing={2} alignItems="center">
-        <Grid item>
-          <VolumeUp />
-        </Grid>
-        <Grid item xs>
-          <Slider
-            value={typeof value === 'number' ? value : 0}
-            onChange={handleSliderChange}
-            aria-labelledby="input-slider"
-          />
-        </Grid>
-        <Grid item>
-          <Input
-            className={classes.input}
-            value={value}
-            margin="dense"
-            onChange={handleInputChange}
-            onBlur={handleBlur}
-            inputProps={{
-              step: 10,
-              min: 0,
-              max: 100,
-              type: 'number',
-              'aria-labelledby': 'input-slider',
-            }}
-          />
-        </Grid>
-      </Grid>
-    </div>
-  );
-}
-
+export default SearchRadiusInput;

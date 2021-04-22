@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios'
 
 // import TrailDetails from '../TrailDetails/TrailDetails';
@@ -10,6 +10,7 @@ import axios from 'axios'
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
+import Conditions from '../Conditions/Conditions';
 
 
 // import {
@@ -66,7 +67,7 @@ function FeedbackPage(props) {
     return (
         <div className="container">
 
-            <Slider />
+            {/* <Slider /> */}
 
             {/* <SliderInput>
                 <SliderTrack>
@@ -88,7 +89,8 @@ function FeedbackPage(props) {
                     ))}
                 </Slider>
             </div> */}
-            
+            <Slider />
+            <Conditions />
         </div>
     );
 }
