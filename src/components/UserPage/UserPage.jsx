@@ -21,8 +21,6 @@ function UserPage() {
   return (
     <div >
       <h2 className="featHead">Featured Trails</h2>
-      {/* <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p> */}
       <SearchBar />
     {trails.map(trail => {
       return (

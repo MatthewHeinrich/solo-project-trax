@@ -26,25 +26,10 @@ function TrailDetails(props) {
         
     }, []);
 
-    
-
-    // const description = useSelector( (store) =>{
-    //     console.log('use selector:', store.movies)
-    //     return store.movies
-    // })
-    
     console.log(props)
     console.log(user)
 
-  
-    
     const favorite = () =>{
-        // console.log('trying to favorite')
-        // axios.post('/api/trails', trail).then((res) =>{
-        // res.send(props)
-        // }).catch((err) =>{
-        //     console.log(err)
-        // })
 
         dispatch({type: 'ADD_FAVORITE', payload: [user, details] })
     }
@@ -57,15 +42,6 @@ function TrailDetails(props) {
         <div>
             {details.map(detail => (
                 <> 
-                    {/* <h3>
-                        {detail.trail_name} 
-                    </h3>
-                    <h4>
-                        {detail.trail_city}
-                    </h4>
-                    <h4>
-                        {detail.overall}
-                    </h4> */}
                 </>
             ))}
                     <h3>
