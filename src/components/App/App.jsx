@@ -6,7 +6,7 @@ import {
   Switch,
 } from 'react-router-dom';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
@@ -27,6 +27,7 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector(store => store.user.id)
 
   useEffect(() => {
     dispatch({ type: 'FETCH_USER' });
@@ -107,14 +108,17 @@ function App() {
           </ProtectedRoute>
 
           {/* <Route path="/details/:id" render={(props) => <TrailDetails id={props.match.params.id} />}> */}
+            
             <Route path='/details/:id' render={(props) => <TrailDetails trail={props.match.params} id={props.match.params.id} /> }>
             {/* <TrailDetails /> */}
             </Route>
+          
           {/* </Route> */}
-
+          <ProtectedRoute>
           <Route path='/feedback/:id' render={(props) => <Feedback trail={props.match.params} id={props.match.params.id} /> }>
             {/* <Feedback path="/feedback" /> */}
           </Route>
+          </ProtectedRoute>
 
           {/* If none of the other routes matched, we will show a 404. */}
           <Route>

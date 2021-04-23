@@ -2,12 +2,15 @@ import React, {useEffect} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom'
+import SearchBar from '../SearchBar/SearchBar'
 
+import './UserPage.css'
 
 function UserPage() {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_TRAILS' });
+    dispatch({type: 'FETCH_FAVORITES', payload: user})
   }, []);
 
   const dispatch = useDispatch();
@@ -17,17 +20,21 @@ function UserPage() {
 
   return (
     <div >
-      <h2>Welcome, {user.username}!</h2>
-      <p>Your ID is: {user.id}</p>
+      <h2 className="featHead">Featured Trails</h2>
+      {/* <h2>Welcome, {user.username}!</h2>
+      <p>Your ID is: {user.id}</p> */}
+      <SearchBar />
     {trails.map(trail => {
       return (
     
-        <div className="container">
-          <p>{trail.trail_name}</p>
-          <p>{trail.trail_city}</p>
-          <img src={trail.map_url}></img>
+        <div className="card gradient-border">
+          <div className='cardHeader'>
+          <h3 className='cardData'>{trail.trail_name}</h3>
+          <h3 className='cardData'>{trail.trail_city}</h3>
+          </div>
+          <img className="card-img-top" src={trail.map_url}></img>
           <Link to={`/details/${trail.id}`}>
-            <button>Details</button>
+            <button id="home-btn" class="btn btn-info">Details</button>
           </Link>
         
         </div>

@@ -12,6 +12,7 @@ import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 import './Conditions.css'
+import Slider from '../Slider/Slider'
 
 const GreenCheckbox = withStyles({
     root: {
@@ -54,8 +55,10 @@ export default function CheckboxLabels(props) {
     console.log(state);
     return (
         <>
+            <Slider id={props}/>
+            <h3 className="conditions">Conditions</h3>
             <FormGroup row>
-                <FormLabel component="legend">Conditions Feedback   </FormLabel>
+                {/* <FormLabel component="legend">Conditions Feedback   </FormLabel> */}
 
                 <FormControlLabel
                     control={<GreenCheckbox onChange={handleChange} name="checkedWet" className="checkBox" />}

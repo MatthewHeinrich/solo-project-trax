@@ -14,7 +14,7 @@ function Favorites() {
   const user = useSelector(store => store.user.id)
 
   useEffect(() => {
-    dispatch({type: 'FETCH_FAVORITES', payload: user})
+    // dispatch({type: 'FETCH_FAVORITES', payload: user})
   }, [])
   return (
     <div className="container">

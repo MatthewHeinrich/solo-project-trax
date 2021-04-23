@@ -9,8 +9,10 @@ import axios from 'axios'
 
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Slider from '@material-ui/core/Slider';
+// import Slider from '@material-ui/core/Slider';
 import Conditions from '../Conditions/Conditions';
+import Slider from '../Slider/Slider'
+
 
 
 // import {
@@ -66,7 +68,7 @@ function FeedbackPage(props) {
     
     return (
         <div className="container">
-
+            
             {/* <Slider /> */}
 
             {/* <SliderInput>
@@ -89,7 +91,7 @@ function FeedbackPage(props) {
                     ))}
                 </Slider>
             </div> */}
-            <Slider id={props}/>
+            
             <Conditions id={props}/>
         </div>
     );

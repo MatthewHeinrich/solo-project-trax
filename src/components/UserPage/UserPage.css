@@ -1,0 +1,27 @@
+.card{
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 15px;
+    margin: 2rem auto;
+    width: 300px;
+    background-image: linear-gradient(45deg,  #40dd4d, #086e08);
+}
+.cardHeader{
+    /* border-bottom: 1px solid black; */
+    /* background-color: green; */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-align: center;
+}
+.cardData{
+    color: white;
+    border-radius: 15px;
+    margin-top: 0;
+}
+.cardImg{
+    border-radius: 10px;
+    
+}
+.featHead{
+    text-align: center;
+    color: green;
+}

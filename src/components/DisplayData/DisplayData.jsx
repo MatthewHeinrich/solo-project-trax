@@ -8,11 +8,14 @@ const state = {
     datasets: [
         {
             label: 'Styles',
-            backgroundColor: 'rgba(75,192,192,1)',
+            backgroundColor: 'green',
+            hoverBackgroundColor: '#40dd4d',
+            hoverBorderColor: 'green',
             borderColor: 'rgba(0,0,0,1)',
-            borderWidth: 2,
-            data: [65, 59, 80, 81, 56]
-        }
+            borderWidth: 0,
+            borderRadius: 10,
+            data: [5, 9, 8, 5, 9]
+        },
     ]
 }
 
@@ -23,9 +26,14 @@ export default (props) => {
         console.log(props.data)
         return (
             <div>
-                <Bar
+                <Bar 
                     data={state}
                     options={{
+                        gridLines: {
+                            color: 'rgba(0,0,0,0)',
+                            display: false,
+                            xAxis: 10
+                        },
                         title: {
                             display: true,
                             text: 'Average Rainfall per month',
@@ -33,7 +41,11 @@ export default (props) => {
                         },
                         legend: {
                             display: true,
-                            position: 'right'
+                            position: 'right',
+                            labels: {
+                                boxWidth: 80,
+                                fontColor: 'black'
+                            }
                         }
                     }}
                 />
