@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
-import {useHistory} from 'react-router-dom';
+import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios'
 
 // This is one of our simplest components
@@ -18,10 +18,25 @@ function Favorites() {
   }, [])
   return (
     <div className="container">
+      <h2>Favorites</h2>
       {favorites.map(favorite => {
+        console.log(favorites)
         return (
           
-          <h4>{favorite.trail_name}</h4> 
+          <div className="card gradient-border">
+          <div className='cardHeader'>
+          <h2 className='cardData'>{favorite.trail_name}</h2>
+          <h3 className='cardData'>- {favorite.trail_city} -</h3>
+          </div>
+          <img className="card-img-top" src={favorite.map_url}></img>
+          <button id="home-btn" class="btn btn-info">Delete</button>
+          <Link to={`/details/${favorite.id}`}>
+            <button id="home-btn" class="btn btn-info">Details</button>
+          </Link>
+          
+          
+      
+        </div>
 
         )
       })}

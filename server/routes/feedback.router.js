@@ -16,6 +16,12 @@ const {
                     WHERE "trails".id = ($1)`
     pool.query(query, [req.params.id])
     .then( result => {
+        // console.log(req.params)
+        // const query2 = `SELECT AVG("feedback".overall) FROM "feedback" 
+        //                 JOIN "trails" ON "trails".id = "feedback".trail_id
+        //                 JOIN "conditions" ON "feedback".trail_id = "conditions".trail_id
+        //                 WHERE "trails".id = ($1)`
+        // pool.query(query2, [req.params.id])           
     res.send(result.rows)
     })
     .catch(err => {

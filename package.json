@@ -6,6 +6,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/styles": "^4.11.3",
     "@reach/slider": "^0.15.0",
     "axios": "^0.21.1",
@@ -26,6 +27,8 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "react-slider": "^1.1.4",
+    "react-star-rating": "^1.4.2",
+    "react-star-ratings": "^2.3.0",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-saga": "^1.1.3"
