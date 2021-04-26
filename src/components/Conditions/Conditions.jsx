@@ -26,7 +26,9 @@ const GreenCheckbox = withStyles({
 
 
 export default function CheckboxLabels(props) {
- 
+    useEffect(() => {
+        styles 
+    })
     const dispatch = useDispatch();
     const user = useSelector(store => store.user.id)
     const data = useSelector(store => store.data);
@@ -34,7 +36,7 @@ export default function CheckboxLabels(props) {
     console.log(props.data)
     // const trailId = props.id.id
     const styles = props
-
+    const [style, setStyle] = useState({})
     const [state, setState] = React.useState({
         checkedWet: false,
         checkedTacky: false,
@@ -42,21 +44,28 @@ export default function CheckboxLabels(props) {
         checkedDry: false,
         checkedOpen: false,
         checkedClosed: false,
-        styles: styles,
         user: user,
     });
+    const trailData = {
+        conditions: state,
+        styles: styles,
+    }
 
     const handleChange = (event) => {
+
         setState({ ...state, [event.target.name]: event.target.checked });
-        
+
     };
+    
 
     const sendFeedback = () => {
-        dispatch({ type: 'SEND_FEEDBACK', payload: state })
+
+        dispatch({ type: 'SEND_FEEDBACK', payload: trailData })
     }
     console.log(props)
     console.log(state);
     console.log(props.data)
+    console.log(trailData)
     return (
         <>
             {/* <Slider id={props}/> */}
