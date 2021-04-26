@@ -38,7 +38,7 @@ function Nav() {
         <button className="navbtn" onClick={handleToggle}>{navbarOpen ? (
                   <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
                 ) : (
-                  <FiMenu style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />
+                  <FiMenu style={{ color: "white", width: "40px", height: "40px" }} />
                 )}</button>
         <Link className="navLink" to={loginLinkData.path} onClick={() => closeMenu()}>
           {loginLinkData.text}

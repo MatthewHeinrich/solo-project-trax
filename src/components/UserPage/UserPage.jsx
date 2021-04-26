@@ -2,15 +2,23 @@ import React, {useEffect, useState} from 'react';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import {useSelector, useDispatch} from 'react-redux';
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 import SearchBar from '../SearchBar/SearchBar'
 
 import './UserPage.css'
 
-function UserPage() {
+function UserPage(props) {
 
   useEffect(() => {
     dispatch({ type: 'FETCH_TRAILS' });
     dispatch({type: 'FETCH_FAVORITES', payload: user})
+  //   axios.get(`/api/details/${props.id}`).then((response) =>{
+  //     console.log(response.data)
+  //     setDetails(response.data)
+  // }).catch((err) =>{
+  //     alert('Error');
+  //     console.log(err);
+  // })
   }, []);
 
   const dispatch = useDispatch();
