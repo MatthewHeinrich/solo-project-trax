@@ -27,9 +27,10 @@ const {
 router.post('/', (req, res) => {
     console.log(req.body)
     const userId = req.body.user
-    const trailId = Number.parseInt(req.body.trail)
+    const trailId = Number.parseInt(req.body.styles.data.trail)
     console.log(userId)
     console.log(trailId)
+    console.log(req.body.styles)
     // console.log(req.body.user.id);
     // const userId = req.body.user.id
 
@@ -38,6 +39,10 @@ router.post('/', (req, res) => {
     pool.query(query, [req.body.checkedOpen, req.body.checkedClosed, req.body.checkedWet, 
                         req.body.checkedTacky, req.body.checkedPerfect, req.body.checkedDry, userId, trailId])
     .then(result => {
+        const query = `INSERT INTO "feedback" ("flowy", "technical", "downhill", "climbing", "overall", "user_id", "trail_id")
+                    VALUES ($1, $2, $3, $4, $5, $6, $7)`
+                    pool.query(query, [req.body.styles.data.flowy, req.body.styles.data.technical, req.body.styles.data.downhill,
+                                        req.body.styles.data.climbing, req.body.styles.data.overall, userId, trailId])
         res.send(result.rows)
     })
     .catch(err => {

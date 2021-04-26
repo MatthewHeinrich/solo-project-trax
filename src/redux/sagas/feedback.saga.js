@@ -7,7 +7,7 @@ function* sendFeedback(action) {
 try {
     yield axios.post('/api/feedback', action.payload); // , config
 
-    yield put({ type: 'SET_FEEDBACK', payload: response.data });
+    yield put({ type: 'SET_FEEDBACK', payload: action.payload });
 } catch (error) {
     console.log('Error sending feedback', error);
     }

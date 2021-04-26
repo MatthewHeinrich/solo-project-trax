@@ -8,14 +8,18 @@
 .cardHeader{
     /* border-bottom: 1px solid black; */
     /* background-color: green; */
+    margin-top: 1rem;
+    margin-bottom: -.5rem;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .cardData{
     color: white;
     border-radius: 15px;
     margin-top: 0;
+    text-shadow: 2px 2px 4px #000000;
 }
 .cardImg{
     border-radius: 10px;

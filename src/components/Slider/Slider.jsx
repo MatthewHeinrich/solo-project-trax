@@ -6,6 +6,7 @@ import Slider from '@material-ui/core/Slider';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import './Slider.css'
+import Conditions from '../Conditions/Conditions';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -145,6 +146,7 @@ export default function DiscreteSlider(props) {
                 valueLabelDisplay={valuetext}
                 onChange={handleOverallChange}
             />
+            <Conditions data={data}/>
         </div>
     );
 }

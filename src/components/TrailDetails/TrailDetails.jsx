@@ -3,9 +3,13 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios'
 
+import Button from "@material-ui/core/Button";
+import { withStyles } from "@material-ui/core/styles";
+
 import Conditions from '../Conditions/Conditions';
 import Feedback from '../Feedback/Feedback';
 import DisplayData from '../DisplayData/DisplayData';
+import './TrailDetails.css';
 
 function TrailDetails(props) {
 
@@ -29,12 +33,31 @@ function TrailDetails(props) {
     console.log(props)
     console.log(user)
 
+  
+    
     const favorite = () =>{
 
         dispatch({type: 'ADD_FAVORITE', payload: [user, details] })
     }
     console.log('details', details[0]?.trail_id);
     console.log(data);
+
+    const CustomButton = withStyles({
+        root: {
+            background: "#f8be53",
+            
+            borderRadius: 3,
+            border: 0,
+            color: "white",
+            height: 48,
+            padding: "0 30px",
+            boxShadow: "8px 8px 8px #888888;"
+        },
+        label: {
+            textTransform: "capitalize"
+        }
+        })(props => <Button {...props} />);
+
 
     // renders genres, movie poster and description 
     return( 
@@ -44,22 +67,25 @@ function TrailDetails(props) {
                 <> 
                 </>
             ))}
+            <div className="detailCard">
                     <h3>
                         {details[0]?.trail_name} 
                     </h3>
                     <h4>
-                        {details[0]?.trail_city}
+                        - {details[0]?.trail_city} -
                     </h4>
-                    <h4>
+                    {/* <h4>
                         {details[0]?.overall}
-                    </h4>
-                <img height={300} width={300} src={details[0]?.map_url}></img>
-                <div class="details">
+                    </h4> */}
+                <img height={300} width={400} src={details[0]?.map_url}></img>
+            <div class="details">
+                <div class="buttons">
                 <Link to={`/feedback/${details[0]?.trail_id}`}>
-                    <button id="home-btn" class="btn btn-info">Rate It</button>
+                    <CustomButton>Rate It</CustomButton>
                 </Link>
-                <button id="home-btn" class="btn btn-info" onClick={favorite}>Favorite</button>
-                
+                <CustomButton onClick={favorite}>Favorite</CustomButton>
+                </div>
+            </div>
         </div> 
                 <DisplayData data={details}/>
         </div>

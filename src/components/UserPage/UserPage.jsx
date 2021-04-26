@@ -27,8 +27,8 @@ function UserPage() {
     
         <div className="card gradient-border">
           <div className='cardHeader'>
-          <h3 className='cardData'>{trail.trail_name}</h3>
-          <h3 className='cardData'>{trail.trail_city}</h3>
+          <h2 className='cardData'>{trail.trail_name}</h2>
+          <h3 className='cardData'>- {trail.trail_city} -</h3>
           </div>
           <img className="card-img-top" src={trail.map_url}></img>
           <Link to={`/details/${trail.id}`}>

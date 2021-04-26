@@ -1,0 +1,28 @@
+.detailCard{
+    border: 1px solid rgb(151, 151, 151);
+    border-radius: 15px;
+    margin: 2rem auto;
+    width: 300px;
+    background-image: linear-gradient(45deg,  #40dd4d, #086e08);
+    text-align: center;
+    color: white;
+}
+.details{
+    display: inline;
+    width: 200px;
+    margin: 0 auto;
+}
+.buttons{
+    display: inline;
+    width: 200px;
+    margin: 0 auto;
+}
+h4{
+    text-shadow: 2px 2px 4px #000000;
+}
+h3{
+    text-shadow: 2px 2px 4px #000000;
+}
+{
+    text-shadow: 2px 2px 4px #000000;
+}

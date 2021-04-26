@@ -29,13 +29,13 @@ function Nav() {
 
   return (
 
-    <div className="nav">
+    <div className="nav" >
       <Link to="/home">
         <h2 className="nav-title">Trax</h2>
       </Link>
       <nav className="navBar">
         <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-        <button onClick={handleToggle}>{navbarOpen ? (
+        <button className="navbtn" onClick={handleToggle}>{navbarOpen ? (
                   <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
                 ) : (
                   <FiMenu style={{ color: "#7b7b7b", width: "40px", height: "40px" }} />

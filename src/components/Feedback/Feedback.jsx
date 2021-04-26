@@ -47,7 +47,7 @@ function FeedbackPage(props) {
     
     return (
         <div className="container">
-            <Conditions id={props}/>
+            <Slider id={props}/>
         </div>
     );
 }
