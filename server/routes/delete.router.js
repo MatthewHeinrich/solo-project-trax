@@ -6,11 +6,11 @@ const router = express.Router();
  * GET route template
  */
 router.delete('/:id', (req, res) => {
-    console.log(req.body)
+    console.log(req.body.id)
   // GET route code here
-    const query = `DELETE * FROM "favorites"
-                    WHERE "favorites".id = ($1)`
-    pool.query(query, [req.body])
+    const query = `DELETE FROM "favorites"
+                    WHERE "favorites".trail_id = ($1)`
+    pool.query(query, [req.body.id])
 });
 
 /**

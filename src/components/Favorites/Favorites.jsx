@@ -36,10 +36,12 @@ function Favorites() {
           <h3 className='cardData'>- {favorite.trail_city} -</h3>
           </div>
           <img className="card-img-top" src={favorite.map_url}></img>
+          <div className="favBtn">
           <button onClick={() => {deleteFavorite(favorite.id)}} id="home-btn" class="btn btn-info">Delete</button>
           <Link to={`/details/${favorite.id}`}>
             <button id="home-btn" class="btn btn-info">Details</button>
           </Link>
+          </div>
           
           
       

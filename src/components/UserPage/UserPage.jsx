@@ -78,8 +78,51 @@ function UserPage(props) {
         onChange={(e) => searchForTrails(e)}
       />
       {/* <SearchBar /> */}
-    {trails.map(trail => {
-      return !searched ?  (
+      { !searched ? 
+      trails.map(trail => {
+        return (
+          
+    
+      
+          <div className="card gradient-border">
+            <div className='cardHeader'>
+            <h2 className='cardData'>{trail.trail_name}</h2>
+            <h3 className='cardData'>- {trail.trail_city} -</h3>
+            </div>
+            <img className="card-img-top" height={250} width={300} src={trail.map_url}></img>
+            <Link to={`/details/${trail.id}`}>
+              <button id="home-btn" class="btn btn-info">Details</button>
+            </Link>
+            
+        
+          </div>
+        )})
+    
+    :
+    
+    filtered.map(filter => {
+      return(
+        <div className="card gradient-border">
+        <div className='cardHeader'>
+        <h2 className='cardData'>{filter.trail_name}</h2>
+        <h3 className='cardData'>- {filter.trail_city} -</h3>
+        </div>
+        <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
+        <Link to={`/details/${filter.id}`}>
+          <button id="home-btn" class="btn btn-info">Details</button>
+        </Link>
+        
+    
+      </div>
+      )
+    })
+    
+    } 
+
+
+
+    {/* {trails.map(trail => {
+      return (
         
   
     
@@ -95,39 +138,39 @@ function UserPage(props) {
           
       
         </div>
-        
-      ) : (  filtered.map(filter => {
-        return(
-          <div className="card gradient-border">
-          <div className='cardHeader'>
-          <h2 className='cardData'>{filter.trail_name}</h2>
-          <h3 className='cardData'>- {filter.trail_city} -</h3>
-          </div>
-          <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
-          <Link to={`/details/${filter.id}`}>
-            <button id="home-btn" class="btn btn-info">Details</button>
-          </Link>
+         */}
+     
+      {/* //   return(
+      //     <div className="card gradient-border">
+      //     <div className='cardHeader'>
+      //     <h2 className='cardData'>{filter.trail_name}</h2>
+      //     <h3 className='cardData'>- {filter.trail_city} -</h3>
+      //     </div>
+      //     <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
+      //     <Link to={`/details/${filter.id}`}>
+      //       <button id="home-btn" class="btn btn-info">Details</button>
+      //     </Link>
           
       
-        </div>
-        )
-      })
+      //   </div>
+      //   )
+      // })
       )
-    })}
+    })} */}
     </div>
 
     
     <div >
 
     <div>
-      <input
+      {/* <input
           className="searchBar"
           style={BarStyling}
           key="random1"
           // value={keyword}
           placeholder={"search trails"}
           onChange={(e) => searchForTrails(e)}
-      />
+      /> */}
       {/* {trails.length && displayList()} */}
       
       {/* {filtered.map(filter => {

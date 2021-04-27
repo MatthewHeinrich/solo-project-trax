@@ -6,7 +6,7 @@ function* deleteFavorite(action) {
     console.log(action.payload);
     const id = action.payload
 try {   
-    yield axios.delete(`http://localhost:3000/#/delete/${id}`)
+    yield axios.delete(`/api/delete/${id}`, { data: {id: action.payload} })
 
     // yield axios({
     //     method: 'DELETE',
