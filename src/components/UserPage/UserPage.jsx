@@ -69,6 +69,7 @@ function UserPage(props) {
       <h2 className="featHead">Featured Trails</h2>
       <div>
         <input
+            className="searchBar"
             style={BarStyling}
             key="random1"
             // value={keyword}
@@ -94,7 +95,7 @@ function UserPage(props) {
           <h2 className='cardData'>{trail.trail_name}</h2>
           <h3 className='cardData'>- {trail.trail_city} -</h3>
           </div>
-          <img className="card-img-top" src={trail.map_url}></img>
+          <img className="card-img-top" height={250} width={300} src={trail.map_url}></img>
           <Link to={`/details/${trail.id}`}>
             <button id="home-btn" class="btn btn-info">Details</button>
           </Link>

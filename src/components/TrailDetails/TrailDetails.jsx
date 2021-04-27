@@ -85,11 +85,11 @@ function TrailDetails(props) {
                 <> 
                 </>
             ))}
-            <div className="detailCard">
-                    <h3>
+            <div >
+                    <h2 className="detailName">
                         {details[0]?.trail_name} 
-                    </h3>
-                    <h4>
+                    </h2>
+                    <h4 className="detailCity">
                         - {details[0]?.trail_city} -
                     </h4>
                     {/* <h4>
@@ -101,9 +101,9 @@ function TrailDetails(props) {
             <div class="details">
                 <div class="buttons">
                 <Link to={`/feedback/${details[0]?.trail_id}`}>
-                    <CustomButton>Rate It</CustomButton>
+                    <button class="btn">Rate It</button>
                 </Link>
-                <CustomButton onClick={favorite}>Favorite</CustomButton>
+                <button class="btn" onClick={favorite}>Favorite</button>
                 </div>
             </div>
         </div> 

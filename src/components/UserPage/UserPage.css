@@ -18,14 +18,26 @@
 .cardData{
     color: white;
     border-radius: 15px;
-    margin-top: 0;
-    text-shadow: 2px 2px 4px #000000;
+    margin-top: -.5rem;
+    object-fit: cover;
+    /* text-shadow: 2px 2px 4px #4dce1a; */
 }
 .cardImg{
     border-radius: 10px;
     
 }
 .featHead{
+    text-align: center;
+    color: green;
+}
+.searchBar{
+    margin-top: 4rem;
+    object-position: center;
+    margin-left: 1.5rem;
+    box-shadow: rgb(14, 0, 0);
+}
+.favHead{
+    margin-top: 6rem;
     text-align: center;
     color: green;
 }

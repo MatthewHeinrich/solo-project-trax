@@ -24,7 +24,7 @@ function Favorites() {
 
   return (
     <div className="container">
-      <h2>Favorites</h2>
+      <h2 className="favHead">Favorites</h2>
 
       {favorites.map(favorite => {
         console.log(favorites)

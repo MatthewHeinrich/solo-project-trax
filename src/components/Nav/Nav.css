@@ -5,11 +5,69 @@
   align-items: center;
   
   margin: 0 0 30px;
-  background-image: linear-gradient(45deg, #086e08, #40dd4d);
+  background-image: linear-gradient(45deg, #086e08, #40dd4d) !important;
   overflow: hidden;
   
 }
+.MuiAppBar-colorPrimary {
+  color: #fff;
+  background-color: #3f51b5;
+  background-image: linear-gradient(
+45deg
+, #086e08, #40dd4d) !important;
+}
+/* background for drawer */
+.MuiPaper-root { 
+  color: rgba(0, 0, 0, 0.87);
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  background-image: linear-gradient(45deg, #40dd4d, #086e08);
+ 
+} 
+.MuiTypography-body1 {
+  color: white !important ;
+}
+.homeNav{
+  color: white;
+  text-shadow: none !important;
+  margin-left: -3rem;
+  text-transform: uppercase;
+}
+.favNav{
+  color: white;
+  text-shadow: none !important;
+  margin-left: 1.5rem;
+}
+.aboutNav{
+  color: white;
+  text-shadow: none !important;
+  margin-left: 2rem;
+}
+.traxNav{
+  margin-left: 2rem;
+  padding: 1% !important;
+  text-shadow: none !important;
+  margin-bottom: -.5rem;
+}
+.homeIcon{
+  margin-left: 2rem;
+}
+.favIcon{
+  margin-left: -.5rem;
+  text-transform: capitalize !important;
+}
+.aboutIcon{
+  margin-left: -.5rem;
+}
 
+a {
+  /* display: block; */
+  padding: 20px 40px;
+  text-decoration: none;
+  color: #ffffff !important;
+  /* text-transform: uppercase; */
+  text-align: center !important;
+  font-weight: bold;
+}
 .nav a {
   text-decoration: none;
 }
