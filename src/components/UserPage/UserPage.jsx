@@ -63,32 +63,25 @@ function UserPage(props) {
           setSearched(false);
       }
   }
-
+  
+  
   return (
-    <div >
-      <h2 className="featHead">Featured Trails</h2>
-      <div>
-        <input
-            className="searchBar"
-            style={BarStyling}
-            key="random1"
-            // value={keyword}
-            placeholder={"search trails"}
-            onChange={(e) => searchForTrails(e)}
-        />
-        {/* {trails.length && displayList()} */}
-        
-        {filtered.map(filter => {
-          return(
-            <h4>{filter.trail_name}{filter.trail_city}</h4>
-          )
-        })}
-        </div>
+    <>
+    <div>  
+
+      <input
+        className="searchBar"
+        style={BarStyling}
+        key="random1"
+        // value={keyword}
+        placeholder={"search trails"}
+        onChange={(e) => searchForTrails(e)}
+      />
       {/* <SearchBar /> */}
     {trails.map(trail => {
-      return (
+      return !searched ?  (
         
-        
+  
     
         <div className="card gradient-border">
           <div className='cardHeader'>
@@ -103,9 +96,59 @@ function UserPage(props) {
       
         </div>
         
-      );
+      ) : (  filtered.map(filter => {
+        return(
+          <div className="card gradient-border">
+          <div className='cardHeader'>
+          <h2 className='cardData'>{filter.trail_name}</h2>
+          <h3 className='cardData'>- {filter.trail_city} -</h3>
+          </div>
+          <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
+          <Link to={`/details/${filter.id}`}>
+            <button id="home-btn" class="btn btn-info">Details</button>
+          </Link>
+          
+      
+        </div>
+        )
+      })
+      )
     })}
     </div>
+
+    
+    <div >
+
+    <div>
+      <input
+          className="searchBar"
+          style={BarStyling}
+          key="random1"
+          // value={keyword}
+          placeholder={"search trails"}
+          onChange={(e) => searchForTrails(e)}
+      />
+      {/* {trails.length && displayList()} */}
+      
+      {/* {filtered.map(filter => {
+        return(
+          <div className="card gradient-border">
+          <div className='cardHeader'>
+          <h2 className='cardData'>{filter.trail_name}</h2>
+          <h3 className='cardData'>- {filter.trail_city} -</h3>
+          </div>
+          <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
+          <Link to={`/details/${filter.id}`}>
+            <button id="home-btn" class="btn btn-info">Details</button>
+          </Link>
+          
+      
+        </div>
+        )
+      })} */}
+      </div>
+    </div>
+    </>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 import UserPage from '../UserPage/UserPage'
+import './SearchBar.css'
 
 const SearchBar = ({ keyword, setKeyword }) => {
     const BarStyling = { width: "20rem", background: "#F2F1F9", border: "none", padding: "0.5rem" };
@@ -44,12 +45,14 @@ const SearchBar = ({ keyword, setKeyword }) => {
     return (
         <div>
         <input
+            className="searchBar"
             style={BarStyling}
             key="random1"
             value={keyword}
             placeholder={"search trails"}
             onChange={(e) => searchForNaturalArea(e)}
         />
+        
         {/* {trails.length && displayList()} */}
         {displayList}
         </div>
