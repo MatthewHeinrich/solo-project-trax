@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
     let userId = req.user.id
     console.log(userId)
     // Send back user object from the session (previously queried from the database)
-    const query = `SELECT "trails".trail_name, "trails".trail_city, "trails".map_url FROM "favorites"
+    const query = `SELECT "trails".trail_name, "trails".trail_city, "trails".map_url, "trails".id FROM "favorites"
                     JOIN "user" ON "user".id = "favorites".user_id
                     JOIN "trails" ON "trails".id = "favorites".trail_id 
                     WHERE "user".id = ($1)`

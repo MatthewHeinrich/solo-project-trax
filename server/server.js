@@ -13,6 +13,7 @@ const trailsRouter = require('./routes/trail.router');
 const detailsRouter = require('./routes/details.router');
 const favoritesRouter = require('./routes/favorites.router');
 const feedbackRouter = require('./routes/feedback.router');
+const deleteRouter = require('./routes/delete.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -31,6 +32,7 @@ app.use('/api/trails', trailsRouter);
 app.use('/api/details', detailsRouter);
 app.use('/api/favorites', favoritesRouter);
 app.use('/api/feedback', feedbackRouter);
+app.use('/api/delete', deleteRouter);
 
 // Serve static files
 app.use(express.static('build'));
