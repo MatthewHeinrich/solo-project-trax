@@ -37,9 +37,10 @@
     box-shadow: rgb(14, 0, 0);
 }
 .favHead{
-    margin-top: 6rem;
+    margin-top: 8rem;
     text-align: center;
     color: green;
+    font-size: 210%;
 }
 /* #home-btn{
     margin-left: px;

@@ -45,6 +45,12 @@ Button
   display: flex;
 
 }
+.delete-btn{
+  height: 47px;
+  margin-top: 9px;
+  margin-left: 29px;
+}
+
 
 .btn_sizeMin {
   min-height: 50px;

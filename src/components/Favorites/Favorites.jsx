@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios'
+// import './App.css';
 
 // This is one of our simplest components
 // It doesn't have local state
@@ -39,7 +40,7 @@ function Favorites() {
           </div>
           <img className="card-img-top" height={300} width={400} src={favorite.map_url}></img>
           <div className="favBtn">
-          <button onClick={() => {deleteFavorite(favorite.id)}} id="home-btn" class="btn btn-info">Delete</button>
+          <button onClick={() => {deleteFavorite(favorite.id)}} className="btn btn-info delete-btn" >Delete</button>
           <Link to={`/details/${favorite.id}`}>
             <button id="home-btn" class="btn btn-info">Details</button>
           </Link>
