@@ -22,7 +22,8 @@
     margin: 0 auto;
 }
 .buttons{
-    display:inline !important;
+    display: flex;
+    margin-top: 15px;
 }
 
 .home-btn{
@@ -32,13 +33,20 @@ margin-left: 5rem;
 #rateBtn{
     background-color: green;
 }
-#favItBtn{
+#favItBtn {
+    /* width: 100px; */
     background-color: green;
-    display: inline !important;
+    /* display: inline !important; */
+    /* padding: 10px 20px; */
+    padding: 0;
+    /* border-width: 1px 1px 3px; */
+    height: 46px;
+    margin-top: 7px;
+    text-align: center;
 }
 .detailName{
     text-align: center;
-    margin-top: 7rem;
+    margin-top: 9rem;
 }
 .detailCity{
     text-align: center;
@@ -60,16 +68,22 @@ margin-left: 5rem;
     color:rgb(4, 186, 4);
     
 }
-.condition{
-    font-size: 150%;
+.condition {
+    font-size: 170%;
     font-weight: bold;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    float: right;
-    color: green;
+    /* float: right; */
+    color: rgb(4, 186, 4);
+    text-align: center;
+    margin-right: 1rem;
+    margin-top: 4px;
+    /* vertical-align: text-bottom; */
 }
 .seperate{
     font-size: 180%;
+}
+.detailStatus {
+    display: flex;
+    justify-content: space-between;
 }
 
 h4{

@@ -23,7 +23,7 @@ function TrailDetails(props) {
         axios.get(`/api/details/${props.id}`).then((response) => {
             console.log(response.data)
             setDetails(response.data)
-            
+            // dispatch({type:"GET_RATING", payload: overall})
         }).catch((err) => {
             alert('Error');
             console.log(err);
@@ -115,6 +115,7 @@ function TrailDetails(props) {
     // renders genres, movie poster and description 
     return (
         <>
+        <ToastContainer />
             <div>
                 {details.map(detail => (
                     <>
@@ -128,17 +129,21 @@ function TrailDetails(props) {
                         - {details[0]?.trail_city} -
                     </h4>
                     {/* {averageOverall()} */}
-                    <span className="openStatus">{openStatus()}</span> <span className="condition">{conditionStatus()}</span>
-                    <span className="stars">
-                    {overall && 
-                    <ReactStars
-                        count={5}
-                        value={overall}
-                        isHalf={true}
-                        size={24}
-                        activeColor="#ffd700"
-                    /> 
-                    } </span>
+                    <div className="detailStatus">
+                    
+                        <span className="openStatus">{openStatus()}</span> 
+                        {overall && 
+                        <ReactStars
+                            count={5}
+                            value={overall}
+                            edit={false}
+                            isHalf={true}
+                            size={24}
+                            activeColor="#ffd700"
+                        /> }
+                        <span className="condition">{conditionStatus()}</span>
+                    </div>
+                
                     <img className="detailImg" height={300} width={400} src={details[0]?.map_url}></img>
                     <div className="status">
                     
@@ -153,7 +158,7 @@ function TrailDetails(props) {
                         <button id="rateBtn" class="btn">Rate It</button>
                     </Link>
                     <button id="favItBtn" class="btn" onClick={() => {favorite()}}>Favorite</button>
-                    <ToastContainer />
+                    
                 </div>
             </div>
 

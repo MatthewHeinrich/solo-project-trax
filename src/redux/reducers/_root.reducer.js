@@ -6,6 +6,7 @@ import favorites from './favorites.reducer';
 import getFavorites from './getFavorites.reducer';
 import feedback from './feedback.reducer';
 import deleteFav from './deleteFav.reducer';
+import getRating from './rating.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +22,7 @@ const rootReducer = combineReducers({
   getFavorites,
   feedback,
   deleteFav,
+  getRating,
 });
 
 export default rootReducer;

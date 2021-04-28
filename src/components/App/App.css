@@ -41,8 +41,8 @@ Button
   outline: 0;
   cursor: pointer;
 }
-.favBtn button{
-  display: inline-block;
+.favBtn{
+  display: flex;
 
 }
 

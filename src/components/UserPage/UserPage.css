@@ -31,7 +31,7 @@
     color: green;
 }
 .searchBar{
-    margin-top: 8rem;
+    margin-top: 10rem;
     object-position: center;
     margin-left: 1.5rem;
     box-shadow: rgb(14, 0, 0);
@@ -44,3 +44,8 @@
 /* #home-btn{
     margin-left: px;
 } */
+.starRating {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+}
