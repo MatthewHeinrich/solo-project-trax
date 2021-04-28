@@ -169,10 +169,11 @@ const PersistentDrawerLeft = () => {
           
             <ListItem button  onClick={handleDrawerClose}>
               <HomeIcon className="homeIcon"></HomeIcon>
-                <Link to="/home">
-                  <h2 className="nav-title"></h2>
-                </Link>
+              <Link to={loginLinkData.path} >
+                {/* {loginLinkData.text} */}
                 <h3 className ="homeNav">Home</h3>
+              </Link>
+                
               <ListItemText  />
             </ListItem>
           

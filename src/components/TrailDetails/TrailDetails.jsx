@@ -3,31 +3,33 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios'
 
-import Button from "@material-ui/core/Button";
-import { withStyles } from "@material-ui/core/styles";
-// import Rating from '@material-ui/lab/Rating';
-// import Typography from '@material-ui/core/Typography';
-// import Box from '@material-ui/core/Box';
 import ReactStars from "react-rating-stars-component";
-import { render } from "react-dom";
 
-import Conditions from '../Conditions/Conditions';
-import Feedback from '../Feedback/Feedback';
 import DisplayData from '../DisplayData/DisplayData';
 import './TrailDetails.css';
 
 function TrailDetails(props) {
-    let [overallAvg, setOverallAvg] = useState('')
+    let [overall, setOverall] = useState(0)
     let [details, setDetails] = useState([])
     const user = useSelector(store => store.user);
     // const data = useSelector(store => store)
-
+   
+    
     const dispatch = useDispatch();
 
     useEffect(() => {
         axios.get(`/api/details/${props.id}`).then((response) => {
             console.log(response.data)
             setDetails(response.data)
+            
+        }).catch((err) => {
+            alert('Error');
+            console.log(err);
+        }),
+        axios.get(`/api/details/?id=${props.id}`).then((response) => {
+            console.log(response.data)
+            setOverall(response.data[0].average/2)
+            
         }).catch((err) => {
             alert('Error');
             console.log(err);
@@ -39,19 +41,6 @@ function TrailDetails(props) {
     console.log(user)
     // console.log(details.length.flowy)
 
-    
-    const averageOverall = () => {
-        let i = 0;
-        let avg = 0
-        for (i = 0; i < details.length; i++) {
-            console.log(details[i])
-            avg += details[i].overall / details.length / 2
-            console.log(avg)
-            // setOverallAvg(avg)
-        }
-        return avg
-
-    }
    
     // console.log(avg)
 
@@ -62,29 +51,41 @@ function TrailDetails(props) {
     console.log('details', details[0]?.trail_id);
     // console.log(data);
 
-    const CustomButton = withStyles({
-        root: {
-            background: "#f8be53",
-
-            borderRadius: 3,
-            border: 0,
-            color: "white",
-            height: 48,
-            padding: "0 30px",
-            boxShadow: "8px 8px 8px #888888;"
-        },
-        label: {
-            textTransform: "capitalize"
-        }
-    })(props => <Button {...props} />);
 
     const ratingChanged = (newRating) => {
         console.log(newRating);
     };
+    const averageOverall = () => {
+        let i = 0;
+        let avg = 0
+        for (i = 0; i < details.length; i++) {
+            console.log(details[i])
+            avg += details[i].overall / details.length / 2
+            console.log(avg)
+            // setOverallAvg(avg)
+        }
+        
+        return avg
+        
+    }
 
-    const rating = averageOverall()
-    console.log(rating)
+    const openStatus = () =>{
+        let i=0
+        let openNum = 0
+        for(i=0; i<details.length; i++){
+            if(details[i].open === true){
+                return "Open"
+            } else {
+                return "Closed"
+            }
+        }
     
+    }
+
+    let rating = averageOverall()
+    console.log(details[0]?.open)
+    console.log(overall)
+    let test = 2.5
     // renders genres, movie poster and description 
     return (
         <>
@@ -100,22 +101,19 @@ function TrailDetails(props) {
                     <h4 className="detailCity">
                         - {details[0]?.trail_city} -
                     </h4>
-                    {/* <h4>
-                        {details[0]?.overall}
-                    </h4> */}
-                    {averageOverall()}
-                    <div class="Stars" ></div>
+                    {/* {averageOverall()} */}
+
+                    {overall &&
                     <ReactStars
                         count={5}
-                        value={`${rating}`}
+                        value={overall}
                         isHalf={true}
-                        // filledIcon={averageOverall()}
-                        // onChange={ratingChanged}
                         size={24}
                         activeColor="#ffd700"
                     />
-
+                    }
                     <img className="detailImg" height={300} width={400} src={details[0]?.map_url}></img>
+                    {openStatus()}
                     <div class="details">
                         <DisplayData data={details} />
                     </div>
