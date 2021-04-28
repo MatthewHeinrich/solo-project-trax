@@ -28,6 +28,7 @@ function Favorites() {
 
       {favorites.map(favorite => {
         console.log(favorites)
+        
         return (
           
           <div className="card gradient-border">

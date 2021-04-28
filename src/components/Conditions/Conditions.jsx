@@ -89,6 +89,7 @@ export default function CheckboxLabels(props) {
                     control={<GreenCheckbox onChange={handleChange} name="checkedDry" className="checkBox" />}
                     label="Dry"
                 />
+                <div className="lineSegment"></div>
                 <FormControlLabel
                     control={<GreenCheckbox onChange={handleChange} name="checkedOpen" className="checkBox" />}
                     label="Open"
@@ -99,7 +100,7 @@ export default function CheckboxLabels(props) {
                 />
 
             </FormGroup>
-            <button onClick={sendFeedback} id="home-btn" class="btn btn-info" >Submit</button>
+            <button onClick={sendFeedback} id="submit-btn" class="btn btn-info" >Submit</button>
         </>
     );
 }

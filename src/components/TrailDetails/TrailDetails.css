@@ -11,17 +11,30 @@
 .details{
     display: inline;
     width: 200px;
-    margin: 0 auto;
+    margin-top: 4rem;
+}
+.detailImg{
+    margin-bottom: 2rem;
 }
 .btn{
     display:inline;
     width: 100px;
     margin: 0 auto;
 }
+.buttons{
+    display:inline !important;
+}
 
 .home-btn{
 display: inline-block;
 margin-left: 5rem;
+}
+#rateBtn{
+    background-color: green;
+}
+#favItBtn{
+    background-color: green;
+    display: inline !important;
 }
 .detailName{
     text-align: center;
