@@ -26,7 +26,7 @@ router.get('/', rejectUnauthenticated, (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body)
     const userId = req.body[0].id
-    const trailId = req.body[1][0].id
+    const trailId = req.body[1][0].trail_id
     console.log(userId)
     console.log(trailId)
     // console.log(req.body.user.id);

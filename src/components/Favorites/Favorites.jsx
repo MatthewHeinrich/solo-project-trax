@@ -20,6 +20,7 @@ function Favorites() {
   const deleteFavorite = (id) => {
     dispatch({type: 'DELETE_FAV', payload: id})
     console.log(id)
+
   }
 
   return (
@@ -36,7 +37,7 @@ function Favorites() {
           <h2 className='cardData'>{favorite.trail_name}</h2>
           <h3 className='cardData'>- {favorite.trail_city} -</h3>
           </div>
-          <img className="card-img-top" src={favorite.map_url}></img>
+          <img className="card-img-top" height={300} width={400} src={favorite.map_url}></img>
           <div className="favBtn">
           <button onClick={() => {deleteFavorite(favorite.id)}} id="home-btn" class="btn btn-info">Delete</button>
           <Link to={`/details/${favorite.id}`}>

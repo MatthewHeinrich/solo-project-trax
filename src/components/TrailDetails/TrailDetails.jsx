@@ -4,6 +4,8 @@ import { useHistory, Link } from 'react-router-dom';
 import axios from 'axios'
 
 import ReactStars from "react-rating-stars-component";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import DisplayData from '../DisplayData/DisplayData';
 import './TrailDetails.css';
@@ -14,7 +16,7 @@ function TrailDetails(props) {
     const user = useSelector(store => store.user);
     // const data = useSelector(store => store)
    
-    
+    // const notify = () => toast("Added to Favorites");
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -45,8 +47,17 @@ function TrailDetails(props) {
     // console.log(avg)
 
     const favorite = () => {
-
+        
         dispatch({ type: 'ADD_FAVORITE', payload: [user, details] })
+        toast.warning('Added to Favorites!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     }
     console.log('details', details[0]?.trail_id);
     // console.log(data);
@@ -79,7 +90,22 @@ function TrailDetails(props) {
                 return "Closed"
             }
         }
-    
+    }
+    const conditionStatus = () => {
+        let i = 0
+        for(i=0; i<details.length; i++){
+            if(details[i].wet === true){
+                return "Wet"
+            } else if (details[i].dry === true){
+                return "Dry"
+            } else if (details[i].tacky === true){
+                return "Tacky"
+            } else if (details[i].perfect === true){
+                return "Perfect"
+            } else {
+                return ""
+            }
+        }
     }
 
     let rating = averageOverall()
@@ -102,18 +128,21 @@ function TrailDetails(props) {
                         - {details[0]?.trail_city} -
                     </h4>
                     {/* {averageOverall()} */}
-
-                    {overall &&
+                    <span className="openStatus">{openStatus()}</span> <span className="condition">{conditionStatus()}</span>
+                    <span className="stars">
+                    {overall && 
                     <ReactStars
                         count={5}
                         value={overall}
                         isHalf={true}
                         size={24}
                         activeColor="#ffd700"
-                    />
-                    }
+                    /> 
+                    } </span>
                     <img className="detailImg" height={300} width={400} src={details[0]?.map_url}></img>
-                    {openStatus()}
+                    <div className="status">
+                    
+                    </div>
                     <div class="details">
                         <DisplayData data={details} />
                     </div>
@@ -123,7 +152,8 @@ function TrailDetails(props) {
                     <Link to={`/feedback/${details[0]?.trail_id}`}>
                         <button id="rateBtn" class="btn">Rate It</button>
                     </Link>
-                    <button id="favItBtn" class="btn" onClick={favorite}>Favorite</button>
+                    <button id="favItBtn" class="btn" onClick={() => {favorite()}}>Favorite</button>
+                    <ToastContainer />
                 </div>
             </div>
 

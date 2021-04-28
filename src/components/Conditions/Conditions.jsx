@@ -11,6 +11,8 @@ import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@material-ui/icons/CheckBox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Conditions.css'
 import Slider from '../Slider/Slider'
 
@@ -61,7 +63,17 @@ export default function CheckboxLabels(props) {
     const sendFeedback = () => {
 
         dispatch({ type: 'SEND_FEEDBACK', payload: trailData })
+        toast.warning('Thanks for the Feedback!', {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
     }
+
     console.log(props)
     console.log(state);
     console.log(props.data)
@@ -100,7 +112,8 @@ export default function CheckboxLabels(props) {
                 />
 
             </FormGroup>
-            <button onClick={sendFeedback} id="submit-btn" class="btn btn-info" >Submit</button>
+            <button onClick={() => {sendFeedback()}} id="submit-btn" class="btn btn-info" >Submit</button>
+            <ToastContainer />
         </>
     );
 }
