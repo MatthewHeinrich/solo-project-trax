@@ -103,11 +103,11 @@ export default function CheckboxLabels(props) {
                 />
                 <div className="lineSegment"></div>
                 <FormControlLabel
-                    control={<GreenCheckbox onChange={handleChange} name="checkedOpen" className="checkBox" />}
+                    control={<GreenCheckbox onChange={handleChange} name="checkedOpen" className="checkBox openClose" />}
                     label="Open"
                 />
                 <FormControlLabel
-                    control={<GreenCheckbox onChange={handleChange} name="checkedClosed" className="checkBox" />}
+                    control={<GreenCheckbox onChange={handleChange} name="checkedClosed" className="checkBox openClose" />}
                     label="Closed"
                 />
 

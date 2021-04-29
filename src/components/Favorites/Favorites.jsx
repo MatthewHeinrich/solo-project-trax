@@ -40,7 +40,7 @@ function Favorites() {
           </div>
           <img className="card-img-top" height={300} width={400} src={favorite.map_url}></img>
           <div className="favBtn">
-          <button onClick={() => {deleteFavorite(favorite.id)}} className="btn btn-info delete-btn" >Delete</button>
+          <button onClick={() => {deleteFavorite(favorite.id)}} className="btn delete-btn" >Delete</button>
           <Link to={`/details/${favorite.id}`}>
             <button id="home-btn" class="btn btn-info">Details</button>
           </Link>

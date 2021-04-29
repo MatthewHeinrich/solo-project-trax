@@ -13,7 +13,7 @@
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
     text-align: center;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Righteous';
 }
 .cardData{
     color: white;
@@ -31,13 +31,13 @@
     color: green;
 }
 .searchBar{
-    margin-top: 10rem;
+    margin-top: 9rem;
     object-position: center;
     margin-left: 1.5rem;
     box-shadow: rgb(14, 0, 0);
 }
 .favHead{
-    margin-top: 8rem;
+    margin-top: 7rem;
     text-align: center;
     color: green;
     font-size: 210%;

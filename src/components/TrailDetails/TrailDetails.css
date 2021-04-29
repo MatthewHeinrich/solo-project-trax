@@ -25,6 +25,11 @@
     display: flex;
     margin-top: 15px;
 }
+.delete_btn{
+    height: 47px !important;
+    margin-top: 9px !important;
+    margin-left: 29px !important;
+  }
 
 .home-btn{
 display: inline-block;
@@ -46,7 +51,7 @@ margin-left: 5rem;
 }
 .detailName{
     text-align: center;
-    margin-top: 9rem;
+    margin-top: 8rem;
 }
 .detailCity{
     text-align: center;

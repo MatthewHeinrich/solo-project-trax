@@ -2,10 +2,11 @@ html,
 body,
 #react-root {
   height: 100%;
+  font-family: 'Righteous';
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Righteous';
   margin: 0px;
 }
 
@@ -46,9 +47,10 @@ Button
 
 }
 .delete-btn{
-  height: 47px;
-  margin-top: 9px;
-  margin-left: 29px;
+  height: 47px !important;
+  margin-top: 9px !important;
+  margin-left: 29px !important;
+  
 }
 
 
