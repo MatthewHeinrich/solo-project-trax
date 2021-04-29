@@ -64,6 +64,11 @@
   font-family: 'Righteous';
   /* margin-bottom: -.5rem; */
 }
+.userNav{
+  color:white;
+  margin-left: 3rem;
+  font-size: 120%;
+}
 .homeIcon{
   margin-left: 2rem;
 }

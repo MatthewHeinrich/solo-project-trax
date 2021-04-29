@@ -128,7 +128,7 @@ const PersistentDrawerLeft = () => {
         className={clsx(classes.appBar, {
           [classes.appBarShift]: open,
         })}
-
+        
       > 
         <Toolbar>
           <IconButton
@@ -159,7 +159,9 @@ const PersistentDrawerLeft = () => {
           paper: classes.drawerPaper,
         }}
       > 
+        <p className="userNav">Welcome: {user.username}</p>
         <div className={classes.drawerHeader}>
+        
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
@@ -192,6 +194,23 @@ const PersistentDrawerLeft = () => {
               <ListItemText  />
             </ListItem>
           
+          </Link>
+        </List>
+        <Divider />
+        <List>
+        <Link to="/edit" onClick={handleDrawerClose}>
+        
+          {/* {['About'].map((text, index) => ( */}
+            <ListItem button > 
+            <InfoIcon className="aboutIcon"></InfoIcon>
+            {user.id && (
+              <>
+                {/* <LogOutButton className="navLink" /> */}
+              </>
+            )} <h3 className ="aboutNav">Edit Info</h3>
+              <ListItemText  />
+            </ListItem>
+          {/* ))} */}
           </Link>
         </List>
          <Divider />

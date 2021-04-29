@@ -21,6 +21,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import TrailDetails from '../TrailDetails/TrailDetails';
 import Feedback from '../Feedback/Feedback';
+import EditPage from '../EditPage/EditPage';
 
 
 import './App.css';
@@ -111,6 +112,11 @@ function App() {
             
             <Route path='/details/:id' render={(props) => <TrailDetails trail={props.match.params} id={props.match.params.id} /> }>
             {/* <TrailDetails /> */}
+            </Route>
+
+              
+            <Route path='/edit' >
+              <EditPage />
             </Route>
           
           {/* </Route> */}

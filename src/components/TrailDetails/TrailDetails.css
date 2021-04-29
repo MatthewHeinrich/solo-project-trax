@@ -13,8 +13,12 @@
     width: 200px;
     margin-top: 4rem;
 }
-.detailImg{
-    /* margin-bottom: 2rem; */
+.trailLength{
+    margin-left: 1rem;
+}
+.length{
+    color:rgb(1, 159, 1);
+    font-size: 130%;
 }
 .btn{
     display:inline;

@@ -19,21 +19,14 @@ function UserPage(props) {
   useEffect(() => {
     dispatch({ type: 'FETCH_TRAILS' });
     dispatch({type: 'FETCH_FAVORITES', payload: user})
-    // dispatch({type: 'FETCH_RATING'})
     
-  //   axios.get(`/api/details/${trails.id}`).then((response) =>{
-  //     console.log(response.data)
-  //     setDetails(response.data)
-  // }).catch((err) =>{
-  //     alert('Error');
-  //     console.log(err);
-  // })
-  setOverall({trails,rating})
+    setOverall({trails,rating})
   }, []);
+
   console.log(data)
   console.log(overall)
   const dispatch = useDispatch();
-  // this component doesn't do much to start, just renders some user reducer info to the DOM
+ 
 
   console.log(trails)
   console.log(rating)
@@ -89,30 +82,12 @@ function UserPage(props) {
         onChange={(e) => searchForTrails(e)}
       />
 
-
-      {/* <SearchBar /> */}
       { !searched ? 
       trails.map(trail => {
         return (
           
           <>
-          {/* {axios.get(`/api/details/?id=${trail.id}`).then((response) => {
-            console.log(response.data)
-            // setOverall(response.data[0].average/2)
-            
-        }).catch((err) => {
-            alert('Error');
-            console.log(err);
-        })} */}
-         {/* {rating.map(rating => {
-          return(
-            <>
-            
-            </>
-          )
-          
-        })}
-         */}
+      
           <div className="card gradient-border">
             <div className='cardHeader'>
             
@@ -139,38 +114,30 @@ function UserPage(props) {
           </>
         )})
     
-    :
-    
-    filtered.map(filter => {
-      return(
-        <div className="card gradient-border">
-        <div className='cardHeader'>
-        <h2 className='cardData'>{filter.trail_name}</h2>
-        <h3 className='cardData'>- {filter.trail_city} -</h3>
-        </div>
-        <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
-        <Link to={`/details/${filter.id}`}>
-          <button id="home-btn" class="btn btn-info">Details</button>
-        </Link>
+        :
         
+        filtered.map(filter => {
+          return(
+            <div className="card gradient-border">
+            <div className='cardHeader'>
+            <h2 className='cardData'>{filter.trail_name}</h2>
+            <h3 className='cardData'>- {filter.trail_city} -</h3>
+            </div>
+            <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
+            <Link to={`/details/${filter.id}`}>
+              <button id="home-btn" class="btn btn-info">Details</button>
+            </Link>
+            
+        
+          </div>
+          )
+        })
+        
+        } 
+
+        </div>
+
     
-      </div>
-      )
-    })
-    
-    } 
-
-
-
-    </div>
-
-    
-    <div >
-
-    <div>
-
-      </div>
-    </div>
     </>
   );
 }

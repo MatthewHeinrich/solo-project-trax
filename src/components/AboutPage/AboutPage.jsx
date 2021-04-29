@@ -7,9 +7,10 @@ import React from 'react';
 
 function AboutPage() {
   return (
-    <div className="container" id=''>
+    <div className="about container" id=''>
       <div>
-        <p>This about page is for anyone to read!</p>
+        <h3>About</h3>
+        <p>This app provides users with mountain biking trails, locations and user feedback data.</p>
       </div>
     </div>
   );

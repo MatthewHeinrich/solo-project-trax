@@ -81,9 +81,7 @@ export default function DiscreteSlider(props) {
     return (
         <div className={classes.root}>
             <h2 className="feedHead">Feedback</h2>
-            {/* <Typography id="discrete-slider-always" gutterBottom>
-        Always visible
-      </Typography> */}
+            
             Flowy
             <Slider
                 

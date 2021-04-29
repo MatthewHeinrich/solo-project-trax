@@ -15,6 +15,7 @@ const favoritesRouter = require('./routes/favorites.router');
 const feedbackRouter = require('./routes/feedback.router');
 const deleteRouter = require('./routes/delete.router');
 const ratingRouter = require('./routes/rating.router');
+const editUserRouter = require('./routes/editUser.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -35,6 +36,7 @@ app.use('/api/favorites', favoritesRouter);
 app.use('/api/feedback', feedbackRouter);
 app.use('/api/delete', deleteRouter);
 app.use('/api/rating', ratingRouter);
+app.use('/api/edit', editUserRouter);
 
 // Serve static files
 app.use(express.static('build'));

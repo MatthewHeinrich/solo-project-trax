@@ -148,6 +148,9 @@ function TrailDetails(props) {
                     <div className="status">
                     
                     </div>
+                    <div className="trailLength">
+                        Distance: <span className="length">{details[0]?.length}</span> Miles
+                    </div>
                     <div class="details">
                         <DisplayData data={details} />
                     </div>
