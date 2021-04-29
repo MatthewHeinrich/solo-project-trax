@@ -11,12 +11,13 @@ import axios from 'axios'
 
 function Favorites() {
   const dispatch = useDispatch();
+  
   const favorites = useSelector(store => store.getFavorites)
   const user = useSelector(store => store.user.id)
 
-  // useEffect(() => {
-  //   // dispatch({type: 'FETCH_FAVORITES', payload: user})
-  // }, [])
+  useEffect(() => {
+
+  }, [])
 
   const deleteFavorite = (id) => {
     dispatch({type: 'DELETE_FAV', payload: id})

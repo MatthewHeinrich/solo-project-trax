@@ -3,7 +3,7 @@
     border-radius: 10px;
     margin: 2rem auto;
     width: 300px;
-    background-image: linear-gradient(45deg,  #40dd4d, #086e08);
+    background-image: linear-gradient(256deg,  #40dd4d, #086e08);
 }
 .cardHeader{
     /* border-bottom: 1px solid black; */
@@ -26,15 +26,22 @@
     border-radius: 10px;
     
 }
-.featHead{
+.featTrails{
     text-align: center;
     color: green;
+    margin-top: 25rem;
 }
 .searchBar{
     margin-top: 9rem;
     object-position: center;
-    margin-left: 1.5rem;
-    box-shadow: rgb(14, 0, 0);
+    margin-left: 3rem;
+    box-shadow: rgb(14, 0, 0) !important;
+    border: solid rgba(54, 215, 54, 0.365) !important;
+    border-radius: 15px;
+    width: 17rem !important;
+    /* background-image: linear-gradient(
+        360deg
+        , #bafac0, #d9e9d9) !important; */
 }
 .favHead{
     margin-top: 7rem;
@@ -46,6 +53,7 @@
     margin-left: px;
 } */
 .starRating {
+    margin-top: -.5rem;
     margin-bottom: 10px;
     display: flex;
     justify-content: space-around;

@@ -159,7 +159,7 @@ const PersistentDrawerLeft = () => {
           paper: classes.drawerPaper,
         }}
       > 
-        <p className="userNav">Welcome: {user.username}</p>
+        <p className="userNav">Welcome: {user.username} </p>
         <div className={classes.drawerHeader}>
         
           <IconButton onClick={handleDrawerClose}>

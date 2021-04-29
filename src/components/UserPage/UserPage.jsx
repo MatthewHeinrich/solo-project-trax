@@ -72,8 +72,9 @@ function UserPage(props) {
   return (
     <>
     <div>   
-
+      
       <input
+      
         className="searchBar"
         style={BarStyling}
         key="random1"

@@ -11,6 +11,7 @@ function AboutPage() {
       <div>
         <h3>About</h3>
         <p>This app provides users with mountain biking trails, locations and user feedback data.</p>
+        <p>Merp</p>
       </div>
     </div>
   );
