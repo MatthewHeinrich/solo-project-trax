@@ -61,7 +61,7 @@ export default function CheckboxLabels(props) {
         dispatch({ type: 'SEND_FEEDBACK', payload: trailData })
         toast.warning('Thanks for the Feedback!', {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

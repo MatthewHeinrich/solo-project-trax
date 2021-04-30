@@ -15,12 +15,13 @@ img {
   max-width: 100%;
 }
 
+
 /* --------------------------------------------------------------------------------
 Container
 -------------------------------------------------------------------------------- */
 
 .container {
-  padding: 20px;
+  padding: 30px;
 }
 #logoutContainer {
   padding: 20px;
@@ -45,10 +46,12 @@ Button
   font-size: 1.2rem;
   outline: 0;
   cursor: pointer;
+  /* box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.372), 0 6px 20px 0 rgba(0, 0, 0, 0.31); */
 }
 .favBtn{
   display: flex;
-
+  
+    justify-content: flex-end !important;
 }
 .delete-btn{
   height: 47px !important;

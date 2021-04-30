@@ -49,10 +49,10 @@ function TrailDetails(props) {
     const favorite = () => {
         
         dispatch({ type: 'ADD_FAVORITE', payload: [user, details] })
-        
+
         toast.warning('Added to Favorites!', {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 2500,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,

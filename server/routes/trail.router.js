@@ -10,7 +10,7 @@ const {
  */
 router.get('/', rejectUnauthenticated, (req, res) => {
     // Send back user object from the session (previously queried from the database)
-    const query = `SELECT "trails".trail_name, "trails".id, "trails".map_url, "trails".trail_city, (SUM("overall")/ COUNT("feedback".id) ) AS "average" FROM "feedback"
+    const query = `SELECT "trails".trail_name, "trails".id, "trails".map_url, "trails".trail_city, "trails".cover, (SUM("overall")/ COUNT("feedback".id) ) AS "average" FROM "feedback"
                     JOIN "trails" ON "trails".id = "feedback".trail_id
                     GROUP BY "trails".id
                     ORDER BY "trails".id ASC`

@@ -51,6 +51,10 @@ export default (props) => {
                             color: 'rgba(0,0,0,0)',
                             display: false,
                             xAxis: 10
+                        
+                        },
+                        animation: {
+                            duration: 2000,
                         },
                         title: {
                             display: true,

@@ -3,6 +3,9 @@ import {useSelector, useDispatch} from 'react-redux'
 import {useHistory, Link} from 'react-router-dom';
 import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
+import DeleteIcon from '@material-ui/icons/Delete';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
+import './Favorites.css'
 // import './App.css';
 
 // This is one of our simplest components
@@ -21,15 +24,15 @@ function Favorites() {
   }, [])
 
   const deleteFavorite = (id) => {
-    toast.warning(`Favorite Deleted`, {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      });
+    // toast.warning(`Favorite Deleted`, {
+    //   position: "top-right",
+    //   autoClose: 3000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   });
     dispatch({type: 'DELETE_FAV', payload: id})
     dispatch({type: 'FETCH_FAVORITES', payload: user})
     console.log(id)
@@ -46,24 +49,29 @@ function Favorites() {
         return (
           
           <div className="card gradient-border">
+          <div className="favImg">
+          <Link to={`/details/${favorite.id}`}>
+          <img className="card-img-top" height={300} width={400} src={favorite.cover}></img>
+          </Link>
+          </div>
           <div className='cardHeader'>
           <h2 className='cardData'>{favorite.trail_name}</h2>
           <h3 className='cardData'>- {favorite.trail_city} -</h3>
           </div>
-          <img className="card-img-top" height={300} width={400} src={favorite.map_url}></img>
           <div className="favBtn">
-          <button onClick={() => {deleteFavorite(favorite.id)}} className="btn delete-btn" >Delete</button>
-          <Link to={`/details/${favorite.id}`}>
-            <button id="home-btn" class="btn btn-info">Details</button>
-          </Link>
+          <DeleteForeverIcon onClick={() => {deleteFavorite(favorite.id)}} className="delete" ></DeleteForeverIcon>
+          
+            {/* <button id="home-btn" class="btn btn-info">Details</button> */}
+          
           </div>
           
-          <ToastContainer />
+          
       
         </div>
-
+        
         )
       })}
+      <ToastContainer />
     </div>
   );
 }

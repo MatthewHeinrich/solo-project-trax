@@ -59,7 +59,7 @@ function UserPage(props) {
           let regex = new RegExp(`${pattern}`, "gi");
           console.log(regex);
           // sets the filtered array equal to the sna's that match the query
-          setFiltered(trails.filter( trail => (trail.trail_name + trail.trail_city + trail.mapUrl).match(regex)))
+          setFiltered(trails.filter( trail => (trail.trail_name + trail.trail_city + trail.cover).match(regex)))
           console.log(filtered);
           // set the search state to the opposite of what it was
           setSearched(true);
@@ -88,9 +88,9 @@ function UserPage(props) {
         return (
           
           <>
-      
+          <Link to={`/details/${trail.id}`}>
           <div className="card gradient-border">
-            <div className='cardHeader'>
+            {/* <div className='cardHeader'>
             
             <h2 className='cardData'>{trail.trail_name}</h2>
             <h3 className='cardData'>- {trail.trail_city} -</h3>
@@ -102,16 +102,36 @@ function UserPage(props) {
                         isHalf={true}
                         size={24}
                         activeColor="#ffd700"
+                        className="starRating"
+                    />
+                  </div>
+            </div> */}
+            <img className="card-img-top" height={260} width={300} src={trail.cover}></img>
+            <div className='cardHeader'>
+            
+            <h2 className='cardData'>{trail.trail_name} - <span className="trailCity">{trail.trail_city}</span></h2>
+            {/* <h3 className='cardData'>- {trail.trail_city} -</h3> */}
+                  <div className="starRating">
+                  <ReactStars
+                        count={5}
+                        value={trail.average/2}
+                        edit={false}
+                        isHalf={true}
+                        size={24}
+                        activeColor="#ffd700"
+                        className="starRating"
                     />
                   </div>
             </div>
-            <img className="card-img-top" height={250} width={300} src={trail.map_url}></img>
-            <Link to={`/details/${trail.id}`}>
+            {/* <Link to={`/details/${trail.id}`}>
               <button id="home-btn" class="btn btn-info">Details</button>
-            </Link>
+            </Link> */}
             
         
           </div>
+          
+              {/* <button id="home-btn" class="btn btn-info">Details</button> */}
+            </Link>
           </>
         )})
     
@@ -119,18 +139,33 @@ function UserPage(props) {
         
         filtered.map(filter => {
           return(
+            <Link to={`/details/${filter.id}`}>
             <div className="card gradient-border">
-            <div className='cardHeader'>
+            {/* <div className='cardHeader'>
             <h2 className='cardData'>{filter.trail_name}</h2>
             <h3 className='cardData'>- {filter.trail_city} -</h3>
-            </div>
-            <img className="card-img-top" height={250} width={300} src={filter.map_url}></img>
-            <Link to={`/details/${filter.id}`}>
-              <button id="home-btn" class="btn btn-info">Details</button>
-            </Link>
+            </div> */}
+            <img className="card-img-top" height={250} width={300} src={filter.cover}></img>
             
+              {/* <button id="home-btn" class="btn btn-info">Details</button> */}
+              <div className='cardHeader'>
+              <h2 className='cardData'>{filter.trail_name} - <span className="trailCity">{filter.trail_city}</span></h2>
+              {/* <h3 className='cardData'>- {filter.trail_city} -</h3> */}
+              </div>
+              <div className="starRating">
+                  <ReactStars
+                        count={5}
+                        value={filter.average/2}
+                        edit={false}
+                        isHalf={true}
+                        size={24}
+                        activeColor="#ffd700"
+                        className="starRating"
+                    />
+                  </div>
         
           </div>
+          </Link>
           )
         })
         
