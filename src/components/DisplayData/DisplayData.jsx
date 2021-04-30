@@ -31,7 +31,7 @@ export default (props) => {
             datasets: [
                 {
                     label: 'Styles',
-                    backgroundColor: 'green',
+                    backgroundColor: '#04ad04',
                     hoverBackgroundColor: '#40dd4d',
                     hoverBorderColor: 'green',
                     borderColor: 'rgba(0,0,0,1)',

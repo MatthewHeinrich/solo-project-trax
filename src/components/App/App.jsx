@@ -114,11 +114,12 @@ function App() {
             {/* <TrailDetails /> */}
             </Route>
 
-              
+            {/* <ProtectedRoute> */}
             <Route path='/edit' >
               <EditPage />
             </Route>
-          
+            {/* </ProtectedRoute> */}
+
           {/* </Route> */}
           <ProtectedRoute>
           <Route path='/feedback/:id' render={(props) => <Feedback trail={props.match.params} id={props.match.params.id} /> }>

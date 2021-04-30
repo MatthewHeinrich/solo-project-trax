@@ -40,11 +40,11 @@ display: inline-block;
 margin-left: 5rem;
 }
 #rateBtn{
-    background-color: green;
+    background-color: #04ad04;
 }
 #favItBtn {
     /* width: 100px; */
-    background-color: green;
+    background-color: #04ad04;
     /* display: inline !important; */
     /* padding: 10px 20px; */
     padding: 0;

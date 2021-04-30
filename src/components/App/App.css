@@ -131,6 +131,7 @@ Form Treatment
 input {
   margin: 5px;
   margin-bottom: 10px;
+  display: flex;
 }
 
 /* --------------------------------------------------------------------------------
