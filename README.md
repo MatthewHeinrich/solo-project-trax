@@ -11,3 +11,24 @@ Full stack web application leveraging modern technologies that provides users wi
 <img src="https://user-images.githubusercontent.com/74434237/117020366-fd17f680-acbb-11eb-94d7-89c5854054c7.png" width="400" height="650">
 
 <img src="https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png" width="400" height="650">
+
+## Code Snippets 
+
+
+
+# Built With
+
+ - React
+ - Redux
+ - Sagas
+ - Node.js
+ - Express
+ - PostgreSQl
+ - Chart.js
+ - HTML
+ - CSS
+ - Material-UI
+
+## Appreciation 
+
+Big thank you to my intructors at Prime Digital Academy, my cohort for the support and Prime as a whole for making this project possible.
