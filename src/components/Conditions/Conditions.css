@@ -10,6 +10,7 @@
 }
 .conditions{
     color: #52af77;
+    margin-left: 8rem;
 }
 .MuiTypography-body1{
     color: green !important;
@@ -28,15 +29,19 @@
     align-items: 'center';
     margin-top: 1rem;
     margin-bottom: 1rem;
-    margin-left: 1rem;
+    margin-left: 2rem;
 }
 #submit-btn{
     text-align: center;
-    margin-left: 4rem;
+    margin-left: 5rem;
     margin-top: 3rem;
     background-color: #04ad04;
     width: 200px;
 }
 .openClose{
     font-size: 180%;
+}
+.MuiFormGroup-row {
+    flex-direction: row;
+    margin-left: 1rem;
 }

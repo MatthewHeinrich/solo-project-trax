@@ -13,6 +13,7 @@ body {
 img {
   display: inline-block;
   max-width: 100%;
+  /* margin-left: 6px; */
 }
 
 
@@ -125,6 +126,7 @@ Form Treatment
   color:white;
   /* margin: 0 auto 20px; */
   margin-top: 12rem;
+  margin-left: 5px;
   background-image: linear-gradient(45deg, #086e08, #40dd4d) !important;
   border-radius: 3px;
   box-shadow: 0 1px 2px rgb(0, 0, 0, 0.4);

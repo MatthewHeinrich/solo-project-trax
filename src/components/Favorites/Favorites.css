@@ -4,8 +4,9 @@
 .delete{
     color: rgba(220, 5, 5, 0.858);
     padding-right: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     height: 40px !important;
     width: 35px !important;
-
+    /* margin-bottom: -.5rem; */
+    margin-top: -25px;
 }

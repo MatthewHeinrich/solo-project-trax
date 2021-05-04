@@ -29,9 +29,10 @@
   }
   .MuiSlider-root {
     color:green !important;
+    margin-left: 2rem;
 }
 .feedHead{
     text-align: center;
     margin-top:8rem;
-
+    margin-left: 3rem;
 }

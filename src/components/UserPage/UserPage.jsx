@@ -109,7 +109,7 @@ function UserPage(props) {
             <img className="card-img-top" height={260} width={300} src={trail.cover}></img>
             <div className='cardHeader'>
             
-            <h2 className='cardData'>{trail.trail_name} - <span className="trailCity">{trail.trail_city}</span></h2>
+            <h3 className='cardData'>{trail.trail_name} - <span className="trailCity">{trail.trail_city}</span></h3>
             {/* <h3 className='cardData'>- {trail.trail_city} -</h3> */}
                   <div className="starRating">
                   <ReactStars
@@ -149,7 +149,7 @@ function UserPage(props) {
             
               {/* <button id="home-btn" class="btn btn-info">Details</button> */}
               <div className='cardHeader'>
-              <h2 className='cardData'>{filter.trail_name} - <span className="trailCity">{filter.trail_city}</span></h2>
+              <h3 className='cardData'>{filter.trail_name} - <span className="trailCity">{filter.trail_city}</span></h3>
               {/* <h3 className='cardData'>- {filter.trail_city} -</h3> */}
               </div>
               <div className="starRating">

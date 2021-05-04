@@ -213,7 +213,7 @@ const PersistentDrawerLeft = () => {
           {/* ))} */}
           </Link>
         </List>
-         <Divider />
+        <Divider />
         <List>
         <Link to="/about" onClick={handleDrawerClose}>
         
@@ -232,56 +232,12 @@ const PersistentDrawerLeft = () => {
         </List>
         <Divider />
         <List>
-        <Link  onClick={handleDrawerClose}>
-          <ExitToAppIcon></ExitToAppIcon>
-          <LogOutButton />
-        
-          {/* {['About'].map((text, index) => (
-            <ListItem button key={text}> {user.id && (
-              <>
-                {/* <LogOutButton className="navLink" /> */}
-              {/* </>
-            )}<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))} */} 
+          <Link  onClick={handleDrawerClose}>
+            <ExitToAppIcon></ExitToAppIcon>
+            <LogOutButton />
           </Link>
         </List>
       </Drawer>
-    <div >
-      {/* <Link to="/home">
-        <h2 className="nav-title">Trax</h2>
-      </Link> */}
-      {/* <nav className="navBar"> */}
-        {/* <ul className={`menuNav ${navbarOpen ? " showMenu" : ""}`}>
-        <button className="navbtn" onClick={handleToggle}>{navbarOpen ? (
-                  <MdClose style={{ color: "#fff", width: "40px", height: "40px" }} />
-                ) : (
-                  <FiMenu style={{ color: "white", width: "40px", height: "40px" }} />
-                )}</button> */}
-        {/* <Link className="navLink" to={loginLinkData.path} onClick={() => closeMenu()}>
-          {loginLinkData.text}
-        </Link> */}
-
-        {/* {user.id && (
-          <>
-            <Link className="navLink" to="/favorites" onClick={() => closeMenu()}>
-              Favorites
-            </Link>
-            {/* <LogOutButton className="navLink" /> */}
-          {/* </>
-        )} */} 
-
-        {/* <Link className="navLink" to="/about" onClick={() => closeMenu()}>
-          About
-        </Link> */}
-{/* 
-          <Link className="navLink" onClick={() => closeMenu()}>
-          <LogOutButton />
-          </Link> */}
-        {/* </ul> */}
-      {/* </nav> */}
-    </div>
     </div>
   );
 }

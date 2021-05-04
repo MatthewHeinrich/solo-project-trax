@@ -1,6 +1,6 @@
 .card{
     border: 1px solid rgba(255, 246, 246, 0);
-    border-radius: 15px;
+    border-radius: 17px;
     margin: 2rem auto;
     width: 300px;
     background-image: linear-gradient(256deg,  #40dd4d, #086e08);
@@ -48,7 +48,7 @@
 .searchBar{
     margin-top: 9rem;
     object-position: center;
-    margin-left: 3rem;
+    margin-left: 4.5rem;
     box-shadow: rgb(14, 0, 0) !important;
     border: solid rgba(54, 215, 54, 0.365) !important;
     border-radius: 15px;
