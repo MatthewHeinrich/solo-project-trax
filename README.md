@@ -10,6 +10,6 @@ Full stack web application leveraging modern technologies that provides users wi
 
 ![image](https://user-images.githubusercontent.com/74434237/117020366-fd17f680-acbb-11eb-94d7-89c5854054c7.png)
 
-![image](https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png)
+![image](https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png =250x250)
 
-<img src="https://github.com/MatthewHeinrich/solo-project-trax" data-canonical-src="https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png" width="200" height="400" />
+
