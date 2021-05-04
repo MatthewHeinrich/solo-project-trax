@@ -8,9 +8,12 @@ Full stack web application leveraging modern technologies that provides users wi
 
 <img src="https://user-images.githubusercontent.com/74434237/117022344-c93dd080-acbd-11eb-833d-35a3d6f43cfc.png" width="400" height="650">
 
+<img src="https://user-images.githubusercontent.com/74434237/117023866-1b332600-acbf-11eb-97c6-fbbbf2ab2759.png" width="400" height="650">
+
 <img src="https://user-images.githubusercontent.com/74434237/117020366-fd17f680-acbb-11eb-94d7-89c5854054c7.png" width="400" height="650">
 
 <img src="https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png" width="400" height="650">
+
 
 ## Code Snippets 
 
