@@ -1,6 +1,6 @@
 # Description
 
-Full stack web application leveraging modern technologies that provides users with nearby mountain bike systems. "Trax" allows users to leave feedback such as styles, conditions, trail ratings and gives the opportunity to add trails to their favorites list.
+Full stack web application leveraging modern technologies that provides users with nearby mountain bike systems. "Trax" allows users to leave feedback such as styles, conditions, trail ratings and gives the opportunity to add and delete trails to their favorites list.
 
 # Screenshots
 
@@ -16,7 +16,7 @@ Full stack web application leveraging modern technologies that provides users wi
 
 
 
-# Built With
+## Built With
 
  - React
  - Redux
@@ -31,4 +31,4 @@ Full stack web application leveraging modern technologies that provides users wi
 
 ## Appreciation 
 
-Big thank you to my intructors at Prime Digital Academy, my cohort for the support and Prime as a whole for making this project possible.
+Big thank you to my intructors at Prime Digital Academy for teaching me these technologies, my cohort for the support throughout this program and Prime as a whole for making this project possible.
