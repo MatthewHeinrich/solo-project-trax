@@ -12,4 +12,4 @@ Full stack web application leveraging modern technologies that provides users wi
 
 ![image](https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png)
 
-<img src="https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png" width="100" height="100">
+<img src="https://user-images.githubusercontent.com/74434237/117020414-099c4f00-acbc-11eb-98dd-c4cf56504611.png" width="300" height="450">
