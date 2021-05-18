@@ -20,6 +20,7 @@ Full stack web application leveraging modern technologies that provides users wi
 
 ## Code Snippets 
 
+Renders a Card for Each Trail 
 ![image](https://user-images.githubusercontent.com/74434237/117023866-1b332600-acbf-11eb-97c6-fbbbf2ab2759.png)
 
 Search Bar Logic
