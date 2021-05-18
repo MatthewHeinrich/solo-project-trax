@@ -22,6 +22,9 @@ Full stack web application leveraging modern technologies that provides users wi
 
 ![image](https://user-images.githubusercontent.com/74434237/117023866-1b332600-acbf-11eb-97c6-fbbbf2ab2759.png)
 
+Search Bar Logic
+
+![image](https://user-images.githubusercontent.com/74434237/118708715-acd38500-b7e1-11eb-8ef1-9447210c1ad5.png)
 
 ## Technologies Used
 
