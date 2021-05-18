@@ -36,7 +36,7 @@ export default function CheckboxLabels(props) {
     const styles = props
     const [style, setStyle] = useState({})
     const [state, setState] = React.useState({
-        checkedWet: false,
+        checkedWet: false, 
         checkedTacky: false,
         checkedPerfect: false,
         checkedDry: false,
@@ -44,7 +44,7 @@ export default function CheckboxLabels(props) {
         checkedClosed: false,
         user: user,
     });
-    const trailData = {
+    const trailData = { // object containing user feedback
         conditions: state,
         styles: styles,
     }
@@ -59,7 +59,7 @@ export default function CheckboxLabels(props) {
     const sendFeedback = () => {
 
         dispatch({ type: 'SEND_FEEDBACK', payload: trailData })
-        toast.warning('Thanks for the Feedback!', {
+        toast.warning('Thanks for the Feedback!', { // toast alert for leaving feedback
             position: "top-right",
             autoClose: 2500,
             hideProgressBar: false,

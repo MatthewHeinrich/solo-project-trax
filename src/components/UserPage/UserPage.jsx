@@ -47,7 +47,7 @@ function UserPage(props) {
       return display;
   }
   // handles search f
-  const searchForTrails = (e) => {
+  const searchForTrails = (e) => { // logic to handle searches for trail by name and city
       search += e.target.value;
       console.log( 'search', search );
       // create a regex pattern that looks at each letter of the search query
@@ -90,27 +90,10 @@ function UserPage(props) {
           <>
           <Link to={`/details/${trail.id}`}>
           <div className="card gradient-border">
-            {/* <div className='cardHeader'>
-            
-            <h2 className='cardData'>{trail.trail_name}</h2>
-            <h3 className='cardData'>- {trail.trail_city} -</h3>
-                  <div className="starRating">
-                  <ReactStars
-                        count={5}
-                        value={trail.average/2}
-                        edit={false}
-                        isHalf={true}
-                        size={24}
-                        activeColor="#ffd700"
-                        className="starRating"
-                    />
-                  </div>
-            </div> */}
             <img className="card-img-top" height={260} width={300} src={trail.cover}></img>
             <div className='cardHeader'>
             
             <h3 className='cardData'>{trail.trail_name} - <span className="trailCity">{trail.trail_city}</span></h3>
-            {/* <h3 className='cardData'>- {trail.trail_city} -</h3> */}
                   <div className="starRating">
                   <ReactStars
                         count={5}
@@ -123,14 +106,7 @@ function UserPage(props) {
                     />
                   </div>
             </div>
-            {/* <Link to={`/details/${trail.id}`}>
-              <button id="home-btn" class="btn btn-info">Details</button>
-            </Link> */}
-            
-        
           </div>
-          
-              {/* <button id="home-btn" class="btn btn-info">Details</button> */}
             </Link>
           </>
         )})

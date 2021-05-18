@@ -20,7 +20,7 @@ function TrailDetails(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        axios.get(`/api/details/${props.id}`).then((response) => {
+        axios.get(`/api/details/${props.id}`).then((response) => { // gets details trail by 'id'
             console.log(response.data)
             setDetails(response.data)
             // dispatch({type:"GET_RATING", payload: overall})
@@ -50,7 +50,7 @@ function TrailDetails(props) {
         
         dispatch({ type: 'ADD_FAVORITE', payload: [user, details] })
 
-        toast.warning('Added to Favorites!', {
+        toast.warning('Added to Favorites!', { // toast alert for adding trail to favorites
             position: "top-right",
             autoClose: 2500,
             hideProgressBar: false,

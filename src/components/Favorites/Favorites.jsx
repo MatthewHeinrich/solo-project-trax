@@ -43,7 +43,7 @@ function Favorites() {
     <div className="container">
       <h2 className="favHead">Favorites</h2>
 
-      {favorites.map(favorite => {
+      {favorites.map(favorite => { // map through favorites list to display on favorites page
         console.log(favorites)
         
         return (

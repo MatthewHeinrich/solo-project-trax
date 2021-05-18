@@ -16,7 +16,7 @@ export default (props) => {
         let overallAvg = 0
         for (i=0; i < details.length; i++) {
             console.log(details[i])
-            flowAvg += details[i].flowy / details.length 
+            flowAvg += details[i].flowy / details.length // gathering averages for each feedback type
             techAvg += details[i].technical / details.length 
             downAvg += details[i].downhill / details.length 
             climbAvg += details[i].climbing / details.length 
@@ -28,7 +28,7 @@ export default (props) => {
         const state = {
             labels: ['Flowy', 'Technical', 'Downhill',
                 'Climbing', 'Overall', ],
-            datasets: [
+            datasets: [ // object handling the dataset
                 {
                     label: 'Styles',
                     backgroundColor: '#04ad04',

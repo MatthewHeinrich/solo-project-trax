@@ -36,7 +36,7 @@ function FeedbackPage(props) {
 
 
     const gatherFeedack = () => {
-        const feedback = {
+        const feedback = { // object containg user feedback on styles
             flowy: flowy,
             technical: technical,
             downhill: downhill,
