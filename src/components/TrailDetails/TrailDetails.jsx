@@ -8,6 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import DisplayData from '../DisplayData/DisplayData';
+import Forecast from '../Forecast/Forcast';
 import './TrailDetails.css';
 
 function TrailDetails(props) {
@@ -109,6 +110,7 @@ function TrailDetails(props) {
         }
     }
 
+
     let rating = averageOverall()
     console.log(details[0]?.open)
     console.log(overall)
@@ -163,6 +165,9 @@ function TrailDetails(props) {
                     </Link>
                     <button id="favItBtn" class="btn" onClick={() => {favorite()}}>Favorite</button>
                     
+                </div>
+                <div>
+                    <Forecast />
                 </div>
             </div>
 

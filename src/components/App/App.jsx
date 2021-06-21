@@ -22,6 +22,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import TrailDetails from '../TrailDetails/TrailDetails';
 import Feedback from '../Feedback/Feedback';
 import EditPage from '../EditPage/EditPage';
+import Forecast from '../Forecast/Forcast';
 
 
 import './App.css';
@@ -50,6 +51,13 @@ function App() {
             path="/about"
           >
             <AboutPage />
+          </Route>
+
+          <Route
+            exact
+            path='/forecast'
+          >
+            <Forecast />
           </Route>
 
           {/* For protected routes, the view could show one of several things on the same route.
