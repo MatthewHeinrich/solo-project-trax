@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import './Forecast.css'
 
 export default function Forecast() {
     let [weather, setWeather] = useState({});
@@ -34,15 +35,17 @@ export default function Forecast() {
         return (
             <>
 
-                <div>
-                    <h2>Current Weather Conditions</h2>
+                <div className="weather">
+                    <div className='weatherCont'>
+                    <h2 className="weatherHead" >Current Weather Conditions</h2>
                     <p>Temp: {weather.temp} F</p>
                     <p>Clouds: {weather.clouds}</p>
                     <p>Humidity: {weather.humidity}%</p>
                     <p>Wind: {weather.wind}mph</p>
                     {/* <p>{weather.sunrise?.toString()}</p>
                     <p>{weather.sunset?.toString()}</p> */}
-                    <button onClick={getForecast}>Get Forecast</button>
+                    <button onClick={getForecast} className='btn weatherBtn'>Get Forecast</button>
+                    </div>
                 </div>
             </>
         );

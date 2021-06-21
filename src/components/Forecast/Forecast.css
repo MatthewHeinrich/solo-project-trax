@@ -1,0 +1,24 @@
+.weather{
+    border: 1px solid rgba(255, 246, 246, 0);
+    border-radius: 12px;
+    margin: 2rem auto;
+    width: 300px;
+    background-image: linear-gradient(180deg,  #ddda40, #2e95da);
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.372), 1px 6px 20px 0 rgba(0, 0, 0, 0.31);
+    margin-bottom: -1rem;
+}
+.weatherCont{
+    text-align: center;
+}
+.weatherBtn{
+    text-align: center;
+    /* margin-left: 5rem;
+    margin-top: 3rem; */
+    background-color: #ebca10 !important;
+    width: 200px !important;
+    margin-top: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+.weatherHead{
+    color: #2e95da;
+}
